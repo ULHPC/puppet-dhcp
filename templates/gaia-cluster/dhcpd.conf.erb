@@ -13,9 +13,9 @@
 #   invocation                                                                 #
 ################################################################################
 
-#DHCPD_INTERFACE="eth0" ;	# Interface where dhcpd is active
-use-host-decl-names on;	# the name provided for fixed @ attribution is the client hostname
-#log-facility local7;	# facility to handle the logfiles - complementary config in /etc/syslog.conf
+DHCPD_INTERFACE="eth0 eth1" ;   # Interface where dhcpd is active
+use-host-decl-names on; # the name provided for fixed @ attribution is the client hostname
+#log-facility local7;   # facility to handle the logfiles - complementary config in /etc/syslog.conf
 
 # The ddns-updates-style parameter controls whether or not the server will
 # attempt to do a DNS update when a lease is confirmed. We default to the
@@ -25,8 +25,8 @@ ddns-update-style none;
 
 ### Lease properties
 # option definitions common to all supported networks...
-default-lease-time		28800;
-max-lease-time			86400;
+default-lease-time      28800;
+max-lease-time          86400;
 
 ### Response control
 # specific boot options
@@ -67,64 +67,91 @@ option dhcp-max-message-size 2048;
 
 # # 'PXE' class
 # class "PXE" {
-# 	match if substring(option vendor-class-identifier, 0, 9) = "PXEClient";
-# 	filename "pxelinux.0";
-# 	option vendor-class-identifier "PXEClient";
-# 	vendor-option-space PXE;
-# 	option PXE.mtftp-ip 0.0.0.0;
+#   match if substring(option vendor-class-identifier, 0, 9) = "PXEClient";
+#   filename "pxelinux.0";
+#   option vendor-class-identifier "PXEClient";
+#   vendor-option-space PXE;
+#   option PXE.mtftp-ip 0.0.0.0;
 # }
 
 
 
 shared-network "gaia_cluster_network" {
-	####################
-	# Virtual Networks #
-	####################
+    ####################
+    # Virtual Networks #
+    ####################
     #  Prod network (10.226.0.0/16) - VLAN 245
-	subnet 10.226.0.0 netmask 255.255.0.0 {
-		option      domain-name         "gaia-cluster.uni.lux";
-		option      domain-name-servers 10.226.251.2;    # Default DNS
-		option      ntp-servers         10.28.0.5;       # NTP server of the LCSB site
+    subnet 10.226.0.0 netmask 255.255.0.0 {
+        option      domain-name         "gaia-cluster.uni.lux";
+        option      domain-name-servers 10.226.251.2;    # Default DNS
+        option      ntp-servers         10.28.0.5;       # NTP server of the LCSB site
 
-		option      subnet-mask         255.255.0.0;     # Default subnet mask
-		option      broadcast-address   10.226.255.255;  # Default broadcast adress
-		option      routers             10.226.0.1;      # Default gateway
+        option      subnet-mask         255.255.0.0;     # Default subnet mask
+        option      broadcast-address   10.226.255.255;  # Default broadcast adress
+        option      routers             10.226.0.1;      # Default gateway
 
-		# Host address of the server from which the initial boot file
-		# (specified in the filename statement) is to be loaded.
-		# FAI server
-		next-server faiserver;
-	}
+        # Host address of the server from which the initial boot file
+        # (specified in the filename statement) is to be loaded.
+        # FAI server
+        next-server 10.226.251.3;
+        filename    "pxelinux.0";
+    }
 
     # #  Admin network (10.225.0.0/16) - VLAN 240
-	# subnet 10.225.0.0 netmask 255.255.0.0 {
-	# 	option      domain-name         "gaia-cluster.uni.lux";
-	# 	option      domain-name-servers 10.225.251.2;    # Default DNS
-	# 	option      ntp-servers         10.28.0.5;       # NTP server of the LCSB site
+    # subnet 10.225.0.0 netmask 255.255.0.0 {
+    #   option      domain-name         "gaia-cluster.uni.lux";
+    #   option      domain-name-servers 10.225.251.2;    # Default DNS
+    #   option      ntp-servers         10.28.0.5;       # NTP server of the LCSB site
 
-	# 	option      subnet-mask         255.255.0.0;     # Default subnet mask
-	# 	option      broadcast-address   10.225.255.255;  # Default broadcast adress
-	# 	option      routers             10.225.0.1;      # Default gateway
-	# }
+    #   option      subnet-mask         255.255.0.0;     # Default subnet mask
+    #   option      broadcast-address   10.225.255.255;  # Default broadcast adress
+    #   option      routers             10.225.0.1;      # Default gateway
+    # }
 
     #  Mgmt network (10.227.0.0/16) - VLAN 242
-	subnet 10.227.0.0 netmask 255.255.0.0 {
-		option      domain-name         "gaia-cluster.uni.lux";
-		option      domain-name-servers 10.227.251.2;    # Default DNS
-		option      ntp-servers         10.28.0.5;       # NTP server of the LCSB site
+    subnet 10.227.0.0 netmask 255.255.0.0 {
+        option      domain-name         "gaia-cluster.uni.lux";
+        option      domain-name-servers 10.227.251.2;    # Default DNS
+        option      ntp-servers         10.28.0.5;       # NTP server of the LCSB site
 
-		option      subnet-mask         255.255.0.0;     # Default subnet mask
-		option      broadcast-address   10.227.255.255;  # Default broadcast adress
-		option      routers             10.227.0.1;      # Default gateway
-	}
+        option      subnet-mask         255.255.0.0;     # Default subnet mask
+        option      broadcast-address   10.227.255.255;  # Default broadcast adress
+        option      routers             10.227.0.1;      # Default gateway
+    }
 
-	##################################################################
-	# Host declarations on 'Prod' network (10.226.0.0/16) - VLAN 245 #
-	##################################################################
+    ##################################################################
+    # Host declarations on 'Prod' network (10.226.0.0/16) - VLAN 245 #
+    ##################################################################
     group {
+        # ===== Service nodes =======
+        # temporary add
+        host mds1 {
+            hardware ethernet 00:25:90:3a:21:76;
+            fixed-address     mds1;
+        }
+
+        host mds2 {
+            hardware ethernet 00:25:90:3a:21:48;
+            fixed-address     mds2;
+        }
+
+        host oss2 {
+            hardware ethernet 00:25:90:3a:21:ca;
+            fixed-address     oss2;
+        }
+
+        host oss1 {
+            hardware ethernet 00:25:90:3a:21:c8;
+            fixed-address     oss1;
+        }
+
+        host nfs {
+            hardware ethernet 00:25:90:3a:22:48;
+            fixed-address     nfs;
+        }
 
         # ===== gaia cluster nodes =====
-		### Bullx Inca Enclosure # 1
+        ### Bullx Inca Enclosure # 1
         host gaia-1 {
             hardware ethernet 08:00:38:36:e8:4e;
             fixed-address     gaia-1;
@@ -198,7 +225,7 @@ shared-network "gaia_cluster_network" {
             fixed-address     gaia-18;
         }
 
-		### Bullx Inca Enclosure # 2
+        ### Bullx Inca Enclosure # 2
         host gaia-19 {
             hardware ethernet 08:00:38:36:e4:ea;
             fixed-address     gaia-19;
@@ -272,7 +299,7 @@ shared-network "gaia_cluster_network" {
             fixed-address     gaia-36;
         }
 
-		### Bullx Inca Enclosure # 3
+        ### Bullx Inca Enclosure # 3
         host gaia-37 {
             hardware ethernet 08:00:38:36:e8:00;
             fixed-address     gaia-37;
@@ -346,7 +373,7 @@ shared-network "gaia_cluster_network" {
             fixed-address     gaia-54;
         }
 
-		### Bullx Inca Enclosure # 4
+        ### Bullx Inca Enclosure # 4
         host gaia-55 {
             hardware ethernet 08:00:38:36:e8:fa;
             fixed-address     gaia-55;
@@ -383,14 +410,14 @@ shared-network "gaia_cluster_network" {
     } # End group host of the "Prod" network
 
 
-	##################################################################
-	# Host declarations on 'Mgmt' network (10.227.0.0/16) - VLAN 242 #
+    ##################################################################
+    # Host declarations on 'Mgmt' network (10.227.0.0/16) - VLAN 242 #
     # These corresponds to BMC cards
-	##################################################################
+    ##################################################################
     group {
 
         # ===== gaia cluster nodes (BMC interfaces) =====
-	    ### Bullx Inca Enclosure # 1
+        ### Bullx Inca Enclosure # 1
         host gaia-1-bmc {
             hardware ethernet 08:00:38:36:aa:27;
             fixed-address     gaia-1-bmc;
@@ -464,7 +491,7 @@ shared-network "gaia_cluster_network" {
             fixed-address     gaia-18-bmc;
         }
 
-		### Bullx Inca Enclosure #2
+        ### Bullx Inca Enclosure #2
         host gaia-19-bmc {
             hardware ethernet 08:00:38:36:a8:75;
             fixed-address     gaia-19-bmc;
@@ -538,7 +565,7 @@ shared-network "gaia_cluster_network" {
             fixed-address     gaia-36-bmc;
         }
 
-		### Bullx Inca Enclosure #3
+        ### Bullx Inca Enclosure #3
         host gaia-37-bmc {
             hardware ethernet 08:00:38:36:aa:00;
             fixed-address     gaia-37-bmc;
@@ -612,7 +639,7 @@ shared-network "gaia_cluster_network" {
             fixed-address     gaia-54-bmc;
         }
 
-		### Bullx Inca Enclosure #4
+        ### Bullx Inca Enclosure #4
         host gaia-55-bmc {
             hardware ethernet 08:00:38:36:aa:7d;
             fixed-address     gaia-55-bmc;
