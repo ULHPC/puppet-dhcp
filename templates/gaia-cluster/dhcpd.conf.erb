@@ -150,6 +150,11 @@ shared-network "gaia_cluster_network" {
         #     fixed-address     nfs;
         # }
 
+        host columbus {
+            hardware ethernet 00:25:90:60:60:0a;
+            fixed-address     columbus;
+        }
+
         # ===== gaia cluster nodes =====
         ### Bullx Inca Enclosure # 1
         host gaia-1 {
@@ -415,6 +420,11 @@ shared-network "gaia_cluster_network" {
     # These corresponds to BMC cards
     ##################################################################
     group {
+
+        host columbus-bmc {
+            hardware ethernet 00:25:90:3f:ee:fe;
+            fixed-address     columbus-bmc;
+        }
 
         # ===== gaia cluster nodes (BMC interfaces) =====
         ### Bullx Inca Enclosure # 1
