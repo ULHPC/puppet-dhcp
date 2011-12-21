@@ -145,10 +145,10 @@ shared-network "gaia_cluster_network" {
         #     fixed-address     oss1;
         # }
 
-        # host nfs {
-        #     hardware ethernet 00:25:90:3a:22:48;
-        #     fixed-address     nfs;
-        # }
+        host nfs {
+            hardware ethernet 00:25:90:3a:22:48;
+            fixed-address     nfs;
+        }
 
         host columbus {
             hardware ethernet 00:25:90:60:60:0a;
@@ -400,7 +400,8 @@ shared-network "gaia_cluster_network" {
             fixed-address     gaia-59;
         }
         host gaia-60 {
-            hardware ethernet 08:00:38:36:e8:3a;
+            #hardware ethernet 08:00:38:36:e8:3a;
+            hardware ethernet 08:00:38:36:e5:3a;
             fixed-address     gaia-60;
         }
         host gaia-61 {
@@ -671,7 +672,8 @@ shared-network "gaia_cluster_network" {
             fixed-address     gaia-59-bmc;
         }
         host gaia-60-bmc {
-            hardware ethernet 08:00:38:36:aa:9d;
+            #hardware ethernet 08:00:38:36:aa:9d;
+            hardware ethernet  08:00:38:36:a8:9d;
             fixed-address     gaia-60-bmc;
         }
         host gaia-61-bmc {
