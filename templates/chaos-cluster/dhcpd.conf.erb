@@ -478,15 +478,17 @@ shared-network "chaos_cluster_network" {
 
 
     ##################################################################
-    # Host declarations on 'Mgmt' network (10.2272.0.0/16) - VLAN 142 #
+    # Host declarations on 'Mgmt' network (10.222.0.0/16) - VLAN 142 #
     # These corresponds to BMC cards
     ##################################################################
-    # group {
-    #
-    #
-    # } # End group host of the 'Mgmt' network
+    group {
 
+        host access-bmc {
+                hardware ethernet 00:25:90:6F:3B:D1;
+                fixed-address 10.222.250.5;
+        }
 
+    } # End group host of the 'Mgmt' network
 
 
 }
