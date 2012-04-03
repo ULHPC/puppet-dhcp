@@ -205,17 +205,170 @@ shared-network "chaos_cluster_network" {
                 fixed-address 10.221.1.18;
         }
 
-        ############## r-nodes ################
-        # aka Dell node with 1TB RAM
-        host r-cluster1-1 { # 
-                hardware ethernet 84:2b:2b:6c:9e:b7;    # NIC 1
-                                                        # NIC 2: 84:2b:2b:6c:9e:b9
-                                                        # NIC 3: 84:2b:2b:6c:9e:bb
-                                                        # NIC 4: 84:2b:2b:6c:9e:bd
+        ############## h-nodes ################
+        # aka new HP blade enclosure
+        host h-cluster1-1 { # 1A
+                hardware ethernet F4:CE:46:82:55:D6; # NIC1
+                                                     # NIC2: F4:CE:46:82:55:D7
                 fixed-address 10.221.1.19;
         }
-
-
+        host h-cluster1-2 { # 1B
+                hardware ethernet F4:CE:46:87:8D:62; # NIC1
+                                                     # NIC2: F4:CE:46:87:8D:63
+                fixed-address 10.221.1.20;
+        }
+        host h-cluster1-3 { # 2A
+                hardware ethernet F4:CE:46:80:8F:26; # NIC1
+                                                     # NIC2: F4:CE:46:80:8F:27
+                fixed-address 10.221.1.21;
+        }
+        host h-cluster1-4 { # 2B
+                hardware ethernet 18:A9:05:75:F1:DA; # NIC1
+                                                     # NIC2: 18:A9:05:75:F1:DB
+                fixed-address 10.221.1.22;
+        }
+        host h-cluster1-5 { # 3A
+                hardware ethernet F4:CE:46:BE:5B:0E; # NIC1
+                                                     # NIC2: F4:CE:46:BE:5B:0F
+                fixed-address 10.221.1.23;
+        }
+        host h-cluster1-6 { # 3B
+                hardware ethernet F4:CE:46:87:9D:88; # NIC1
+                                                     # NIC2: F4:CE:46:87:9D:89 
+                fixed-address 10.221.1.24;
+        }
+        host h-cluster1-7 { # 4A
+                hardware ethernet F4:CE:46:BE:2C:6E; # NIC1
+                                                     # NIC2: F4:CE:46:BE:2C:6F 
+                fixed-address 10.221.1.25;
+        }
+        host h-cluster1-8 { # 4B
+                hardware ethernet F4:CE:46:82:D4:AA; # NIC1
+                                                     # NIC2: F4:CE:46:82:D4:AB 
+                fixed-address 10.221.1.26;
+        }
+        host h-cluster1-9 { # 5A
+                hardware ethernet F4:CE:46:B6:BB:8E; # NIC1
+                                                     # NIC2: F4:CE:46:B6:BB:8F 
+                fixed-address 10.221.1.27;
+        }
+        host h-cluster1-10 { # 5B
+                hardware ethernet F4:CE:46:82:F7:A6; # NIC1
+                                                     # NIC2: F4:CE:46:82:F7:A7 
+                fixed-address 10.221.1.28;
+        }
+        host h-cluster1-11 { # 6A
+                hardware ethernet F4:CE:46:BE:4B:C4; # NIC1
+                                                     # NIC2: F4:CE:46:BE:4B:C5 
+                fixed-address 10.221.1.29;
+        }
+        host h-cluster1-12 { # 6B
+                hardware ethernet F4:CE:46:87:7D:F2; # NIC1
+                                                     # NIC2: F4:CE:46:87:7D:F3
+                fixed-address 10.221.1.30;
+        }
+        host h-cluster1-13 { # 7A
+                hardware ethernet F4:CE:46:BE:3C:0A; # NIC1
+                                                     # NIC2: F4:CE:46:BE:3C:0B
+                fixed-address 10.221.1.31;
+        }
+        host h-cluster1-14 { # 7B 
+                hardware ethernet F4:CE:46:87:9D:46; # NIC1
+                                                     # NIC2: F4:CE:46:87:9D:47
+                fixed-address 10.221.1.32;
+        }
+        host h-cluster1-15 { # 8A
+                hardware ethernet F4:CE:46:BE:1C:AE; # NIC1
+                                                     # NIC2: F4:CE:46:BE:1C:AF 
+                fixed-address 10.221.1.33;
+        }
+        host h-cluster1-16 { # 8B
+                hardware ethernet F4:CE:46:87:9D:04; # NIC1
+                                                     # NIC2: F4:CE:46:87:9D:05
+                fixed-address 10.221.1.34;
+        }
+        host h-cluster1-17 { # 9A
+                hardware ethernet F4:CE:46:B6:BB:70; # NIC1
+                                                     # NIC2: F4:CE:46:B6:BB:71 
+                fixed-address 10.221.1.35;
+        }
+        host h-cluster1-18 { # 9B
+                hardware ethernet D8:D3:85:5B:FF:6A; # NIC1
+                                                     # NIC2: D8:D3:85:5B:FF:6B
+                fixed-address 10.221.1.36;
+        }
+        host h-cluster1-19 { # 10A
+                hardware ethernet F4:CE:46:82:B7:24; # NIC1
+                                                     # NIC2: F4:CE:46:82:B7:25 
+                fixed-address 10.221.1.37;
+        }
+        host h-cluster1-20 { # 10B
+                hardware ethernet F4:CE:46:87:9D:3E; # NIC1
+                                                     # NIC2:    F4:CE:46:87:9D:3F 
+                fixed-address 10.221.1.38;
+        }
+        host h-cluster1-21 { # 11A
+                hardware ethernet F4:CE:46:B6:BB:88; # NIC1
+                                                     # NIC2: F4:CE:46:B6:BB:89 
+                fixed-address 10.221.1.39;
+        }
+        host h-cluster1-22 { # 11B
+                hardware ethernet F4:CE:46:87:BD:0C; # NIC1
+                                                     # NIC2: F4:CE:46:87:BD:0D 
+                fixed-address 10.221.1.40;
+        }
+        host h-cluster1-23 { # 12A
+                hardware ethernet F4:CE:46:BE:1C:78; # NIC1
+                                                     # NIC2: F4:CE:46:BE:1C:79
+                fixed-address 10.221.1.41;
+        }
+        host h-cluster1-24 { # 12B
+                hardware ethernet F4:CE:46:87:7D:E2; # NIC1
+                                                     # NIC2: F4:CE:46:87:7D:E3 
+                fixed-address 10.221.1.42;
+        }
+        host h-cluster1-25 { # 13A
+                hardware ethernet F4:CE:46:BE:2C:8A; # NIC1
+                                                     # NIC2: F4:CE:46:BE:2C:8B 
+                fixed-address 10.221.1.43;
+        }
+        host h-cluster1-26 { # 13B
+                hardware ethernet F4:CE:46:87:7D:9C; # NIC1
+                                                     # NIC2: F4:CE:46:87:7D:9D 
+                fixed-address 10.221.1.44;
+        }
+        host h-cluster1-27 { # 14A
+                hardware ethernet F4:CE:46:BE:1C:70; # NIC1
+                                                     # NIC2: F4:CE:46:BE:1C:71 
+                fixed-address 10.221.1.45;
+        }
+        host h-cluster1-28 { # 14B
+                hardware ethernet F4:CE:46:B3:79:6C; # NIC1
+                                                     # NIC2: F4:CE:46:B3:79:6D 
+#OLD            hardware ethernet F4:CE:46:87:AD:D0; # NIC1
+#OLD                                                 # NIC2: F4:CE:46:87:AD:D1 
+                fixed-address 10.221.1.46;
+        }
+        host h-cluster1-29 { # 15A
+                hardware ethernet F4:CE:46:BE:0C:48; # NIC1
+                                                     # NIC2: F4:CE:46:BE:0C:49
+                fixed-address 10.221.1.47;
+        }
+        host h-cluster1-30 { # 15B
+                hardware ethernet F4:CE:46:87:AD:2E; # NIC1
+                                                     # NIC2: F4:CE:46:87:AD:2F 
+                fixed-address 10.221.1.48;
+        }
+        host h-cluster1-31 { # 16A
+                hardware ethernet F4:CE:46:B5:5C:8E; # NIC1
+                                                     # NIC2: F4:CE:46:B5:5C:8F 
+                fixed-address 10.221.1.49;
+        }
+        host h-cluster1-32 { # 16B
+                hardware ethernet F4:CE:46:80:BF:98; # NIC1
+                                                     # NIC2: F4:CE:46:80:BF:99 
+                fixed-address 10.221.1.50;
+        }
 
         ############## d-nodes ################
         # aka new Dell blade enclosure
@@ -300,169 +453,14 @@ shared-network "chaos_cluster_network" {
                 fixed-address 10.221.1.66;
         }
 
-        ############## h-nodes ################
-        # aka new HP blade enclosure
-        host h-cluster1-1 { # 1A
-                hardware ethernet F4:CE:46:82:55:D6; # NIC1
-                                                     # NIC2: F4:CE:46:82:55:D7
-                fixed-address 10.221.1.101;
-        }
-        host h-cluster1-2 { # 1B
-                hardware ethernet F4:CE:46:87:8D:62; # NIC1
-                                                     # NIC2: F4:CE:46:87:8D:63
-                fixed-address 10.221.1.102;
-        }
-        host h-cluster1-3 { # 2A
-                hardware ethernet F4:CE:46:80:8F:26; # NIC1
-                                                     # NIC2: F4:CE:46:80:8F:27
-                fixed-address 10.221.1.103;
-        }
-        host h-cluster1-4 { # 2B
-                hardware ethernet 18:A9:05:75:F1:DA; # NIC1
-                                                     # NIC2: 18:A9:05:75:F1:DB
-                fixed-address 10.221.1.104;
-        }
-        host h-cluster1-5 { # 3A
-                hardware ethernet F4:CE:46:BE:5B:0E; # NIC1
-                                                     # NIC2: F4:CE:46:BE:5B:0F
-                fixed-address 10.221.1.105;
-        }
-        host h-cluster1-6 { # 3B
-                hardware ethernet F4:CE:46:87:9D:88; # NIC1
-                                                     # NIC2: F4:CE:46:87:9D:89 
-                fixed-address 10.221.1.106;
-        }
-        host h-cluster1-7 { # 4A
-                hardware ethernet F4:CE:46:BE:2C:6E; # NIC1
-                                                     # NIC2: F4:CE:46:BE:2C:6F 
-                fixed-address 10.221.1.107;
-        }
-        host h-cluster1-8 { # 4B
-                hardware ethernet F4:CE:46:82:D4:AA; # NIC1
-                                                     # NIC2: F4:CE:46:82:D4:AB 
-                fixed-address 10.221.1.108;
-        }
-        host h-cluster1-9 { # 5A
-                hardware ethernet F4:CE:46:B6:BB:8E; # NIC1
-                                                     # NIC2: F4:CE:46:B6:BB:8F 
-                fixed-address 10.221.1.109;
-        }
-        host h-cluster1-10 { # 5B
-                hardware ethernet F4:CE:46:82:F7:A6; # NIC1
-                                                     # NIC2: F4:CE:46:82:F7:A7 
-                fixed-address 10.221.1.110;
-        }
-        host h-cluster1-11 { # 6A
-                hardware ethernet F4:CE:46:BE:4B:C4; # NIC1
-                                                     # NIC2: F4:CE:46:BE:4B:C5 
-                fixed-address 10.221.1.111;
-        }
-        host h-cluster1-12 { # 6B
-                hardware ethernet F4:CE:46:87:7D:F2; # NIC1
-                                                     # NIC2: F4:CE:46:87:7D:F3
-                fixed-address 10.221.1.112;
-        }
-        host h-cluster1-13 { # 7A
-                hardware ethernet F4:CE:46:BE:3C:0A; # NIC1
-                                                     # NIC2: F4:CE:46:BE:3C:0B
-                fixed-address 10.221.1.113;
-        }
-        host h-cluster1-14 { # 7B 
-                hardware ethernet F4:CE:46:87:9D:46; # NIC1
-                                                     # NIC2: F4:CE:46:87:9D:47
-                fixed-address 10.221.1.114;
-        }
-        host h-cluster1-15 { # 8A
-                hardware ethernet F4:CE:46:BE:1C:AE; # NIC1
-                                                     # NIC2: F4:CE:46:BE:1C:AF 
-                fixed-address 10.221.1.115;
-        }
-        host h-cluster1-16 { # 8B
-                hardware ethernet F4:CE:46:87:9D:04; # NIC1
-                                                     # NIC2: F4:CE:46:87:9D:05
-                fixed-address 10.221.1.116;
-        }
-        host h-cluster1-17 { # 9A
-                hardware ethernet F4:CE:46:B6:BB:70; # NIC1
-                                                     # NIC2: F4:CE:46:B6:BB:71 
-                fixed-address 10.221.1.117;
-        }
-        host h-cluster1-18 { # 9B
-                hardware ethernet D8:D3:85:5B:FF:6A; # NIC1
-                                                     # NIC2: D8:D3:85:5B:FF:6B
-                fixed-address 10.221.1.118;
-        }
-        host h-cluster1-19 { # 10A
-                hardware ethernet F4:CE:46:82:B7:24; # NIC1
-                                                     # NIC2: F4:CE:46:82:B7:25 
-                fixed-address 10.221.1.119;
-        }
-        host h-cluster1-20 { # 10B
-                hardware ethernet F4:CE:46:87:9D:3E; # NIC1
-                                                     # NIC2:    F4:CE:46:87:9D:3F 
-                fixed-address 10.221.1.120;
-        }
-        host h-cluster1-21 { # 11A
-                hardware ethernet F4:CE:46:B6:BB:88; # NIC1
-                                                     # NIC2: F4:CE:46:B6:BB:89 
-                fixed-address 10.221.1.121;
-        }
-        host h-cluster1-22 { # 11B
-                hardware ethernet F4:CE:46:87:BD:0C; # NIC1
-                                                     # NIC2: F4:CE:46:87:BD:0D 
-                fixed-address 10.221.1.122;
-        }
-        host h-cluster1-23 { # 12A
-                hardware ethernet F4:CE:46:BE:1C:78; # NIC1
-                                                     # NIC2: F4:CE:46:BE:1C:79
-                fixed-address 10.221.1.123;
-        }
-        host h-cluster1-24 { # 12B
-                hardware ethernet F4:CE:46:87:7D:E2; # NIC1
-                                                     # NIC2: F4:CE:46:87:7D:E3 
-                fixed-address 10.221.1.124;
-        }
-        host h-cluster1-25 { # 13A
-                hardware ethernet F4:CE:46:BE:2C:8A; # NIC1
-                                                     # NIC2: F4:CE:46:BE:2C:8B 
-                fixed-address 10.221.1.125;
-        }
-        host h-cluster1-26 { # 13B
-                hardware ethernet F4:CE:46:87:7D:9C; # NIC1
-                                                     # NIC2: F4:CE:46:87:7D:9D 
-                fixed-address 10.221.1.126;
-        }
-        host h-cluster1-27 { # 14A
-                hardware ethernet F4:CE:46:BE:1C:70; # NIC1
-                                                     # NIC2: F4:CE:46:BE:1C:71 
-                fixed-address 10.221.1.127;
-        }
-        host h-cluster1-28 { # 14B
-                hardware ethernet F4:CE:46:B3:79:6C; # NIC1
-                                                     # NIC2: F4:CE:46:B3:79:6D 
-#OLD            hardware ethernet F4:CE:46:87:AD:D0; # NIC1
-#OLD                                                 # NIC2: F4:CE:46:87:AD:D1 
-                fixed-address 10.221.1.128;
-        }
-        host h-cluster1-29 { # 15A
-                hardware ethernet F4:CE:46:BE:0C:48; # NIC1
-                                                     # NIC2: F4:CE:46:BE:0C:49
-                fixed-address 10.221.1.129;
-        }
-        host h-cluster1-30 { # 15B
-                hardware ethernet F4:CE:46:87:AD:2E; # NIC1
-                                                     # NIC2: F4:CE:46:87:AD:2F 
-                fixed-address 10.221.1.130;
-        }
-        host h-cluster1-31 { # 16A
-                hardware ethernet F4:CE:46:B5:5C:8E; # NIC1
-                                                     # NIC2: F4:CE:46:B5:5C:8F 
-                fixed-address 10.221.1.131;
-        }
-        host h-cluster1-32 { # 16B
-                hardware ethernet F4:CE:46:80:BF:98; # NIC1
-                                                     # NIC2: F4:CE:46:80:BF:99 
-                fixed-address 10.221.1.132;
+        ############## r-nodes ################
+        # aka Dell node with 1TB RAM
+        host r-cluster1-1 { # 
+                hardware ethernet 84:2b:2b:6c:9e:b7;    # NIC 1
+                                                        # NIC 2: 84:2b:2b:6c:9e:b9
+                                                        # NIC 3: 84:2b:2b:6c:9e:bb
+                                                        # NIC 4: 84:2b:2b:6c:9e:bd
+                fixed-address 10.221.1.67;
         }
 
 
