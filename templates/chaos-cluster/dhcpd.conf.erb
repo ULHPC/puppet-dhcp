@@ -84,8 +84,7 @@ shared-network "chaos_cluster_network" {
     subnet 10.221.0.0 netmask 255.255.0.0 {
         option      domain-name         "chaos-cluster.uni.lux";
         option      domain-name-servers 10.221.251.2;    # Default DNS
-        option      ntp-servers         10.221.250.5;    # NTP server of the CHAOS cluster
-
+        option      ntp-servers         10.221.250.5, 10.226.250.5 ; # NTP servers
         option      subnet-mask         255.255.0.0;     # Default subnet mask
         option      broadcast-address   10.221.255.255;  # Default broadcast adress
         option      routers             10.221.0.1;      # Default gateway
@@ -101,8 +100,7 @@ shared-network "chaos_cluster_network" {
     # subnet 10.220.0.0 netmask 255.255.0.0 {
     #   option      domain-name         "chaos-cluster.uni.lux";
     #   option      domain-name-servers 10.220.251.2;    # Default DNS
-    #   option      ntp-servers         10.21.0.5;       # NTP server of the CHAOS cluster
-
+    #   option      ntp-servers         10.221.250.5, 10.226.250.5 ; # NTP servers
     #   option      subnet-mask         255.255.0.0;     # Default subnet mask
     #   option      broadcast-address   10.220.255.255;  # Default broadcast adress
     #   option      routers             10.220.0.1;      # Default gateway
@@ -112,8 +110,7 @@ shared-network "chaos_cluster_network" {
     subnet 10.222.0.0 netmask 255.255.0.0 {
         option      domain-name         "chaos-cluster.uni.lux";
         option      domain-name-servers 10.222.251.2;    # Default DNS
-        option      ntp-servers         10.221.250.5;    # NTP server of the CHAOS cluster
-
+        option      ntp-servers         10.221.250.5, 10.226.250.5 ; # NTP servers
         option      subnet-mask         255.255.0.0;     # Default subnet mask
         option      broadcast-address   10.222.255.255;  # Default broadcast adress
         option      routers             10.222.0.1;      # Default gateway
