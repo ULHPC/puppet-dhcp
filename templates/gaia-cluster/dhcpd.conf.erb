@@ -409,6 +409,48 @@ shared-network "gaia_cluster_network" {
             hardware ethernet 08:00:38:35:fc:5c;
             fixed-address     gaia-62;
         }
+        host gaia-63 {
+            hardware ethernet 08:00:38:ff:ff:ff;
+            fixed-address     gaia-63;
+        }
+
+        ### Bullx Inca Enclosure # 5
+        host gaia-64 {
+            hardware ethernet 08:00:38:36:00:fe;
+            fixed-address     gaia-64;
+        }
+        host gaia-65 {
+            hardware ethernet 08:00:38:36:00:b8;
+            fixed-address     gaia-65;
+        }
+        host gaia-66 {
+            hardware ethernet 08:00:38:36:00:f8;
+            fixed-address     gaia-66;
+        }
+        host gaia-67 {
+            hardware ethernet 08:00:38:36:01:00;
+            fixed-address     gaia-67;
+        }
+        host gaia-68 {
+            hardware ethernet 08:00:38:35:ff:bc;
+            fixed-address     gaia-68;
+        }
+        host gaia-69 {
+            hardware ethernet 08:00:38:36:01:06;
+            fixed-address     gaia-69;
+        }
+        host gaia-70 {
+            hardware ethernet 08:00:38:35:fb:9c;
+            fixed-address     gaia-70;
+        }
+        host gaia-71 {
+            hardware ethernet 08:00:38:35:fd:10;
+            fixed-address     gaia-71;
+        }
+        host gaia-72 {
+            hardware ethernet 08:00:38:36:00:c2;
+            fixed-address     gaia-72;
+        }
 
     } # End group host of the "Prod" network
 
@@ -674,7 +716,6 @@ shared-network "gaia_cluster_network" {
             fixed-address     gaia-59-bmc;
         }
         host gaia-60-bmc {
-            #hardware ethernet 08:00:38:36:aa:9d;
             hardware ethernet  08:00:38:36:a8:9d;
             fixed-address     gaia-60-bmc;
         }
@@ -686,11 +727,51 @@ shared-network "gaia_cluster_network" {
             hardware ethernet 08:00:38:35:f0:d9;
             fixed-address     gaia-62-bmc;
         }
+        host gaia-63-bmc {
+            hardware ethernet 08:00:38:ff:ff:ff;
+            fixed-address     gaia-63-bmc;
+        }
+
+        ### Bullx Inca Enclosure # 5
+        host gaia-64-bmc {
+            hardware ethernet 08:00:38:35:f3:2a;
+            fixed-address     gaia-64-bmc;
+        }
+        host gaia-65-bmc {
+            hardware ethernet 08:00:38:35:f3:07;
+            fixed-address     gaia-65-bmc;
+        }
+        host gaia-66-bmc {
+            hardware ethernet 08:00:38:35:f3:27;
+            fixed-address     gaia-66-bmc;
+        }
+        host gaia-67-bmc {
+            hardware ethernet 08:00:38:35:f3:2b;
+            fixed-address     gaia-67-bmc;
+        }
+        host gaia-68-bmc {
+            hardware ethernet 08:00:38:35:f2:89;
+            fixed-address     gaia-68-bmc;
+        }
+        host gaia-69-bmc {
+            hardware ethernet 08:00:38:35:f3:2e;
+            fixed-address     gaia-69-bmc;
+        }
+        host gaia-70-bmc {
+            hardware ethernet 08:00:38:35:f0:79;
+            fixed-address     gaia-70-bmc;
+        }
+        host gaia-71-bmc {
+            hardware ethernet 08:00:38:35:f1:33;
+            fixed-address     gaia-71-bmc;
+        }
+        host gaia-72-bmc {
+            hardware ethernet 08:00:38:35:f3:0c;
+            fixed-address     gaia-72-bmc;
+        }
 
 
     } # End group host of the 'Mgmt' network
-
-
 
 
 }
