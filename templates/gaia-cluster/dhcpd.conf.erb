@@ -452,6 +452,14 @@ shared-network "gaia_cluster_network" {
             fixed-address     gaia-72;
         }
 
+        ### Bull BCS
+
+        ### Dell r820
+        host gaia-74 {
+            hardware ethernet 90:b1:1c:09:22:d0;
+            fixed-address     gaia-74;
+        }
+
     } # End group host of the "Prod" network
 
 
@@ -770,6 +778,13 @@ shared-network "gaia_cluster_network" {
             fixed-address     gaia-72-bmc;
         }
 
+    ### Bull BCS
+
+    ### Dell r820
+        host gaia-74-bmc {
+            hardware ethernet e0:db:55:01:48:62;
+            fixed-address     gaia-74-bmc;
+        }
 
     } # End group host of the 'Mgmt' network
 
