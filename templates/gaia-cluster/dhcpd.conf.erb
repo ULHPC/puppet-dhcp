@@ -121,32 +121,6 @@ shared-network "gaia_cluster_network" {
     ##################################################################
     group {
         # ===== Service nodes =======
-        # temporary add
-        # host mds1 {
-        #     hardware ethernet 00:25:90:3a:21:76;
-        #     fixed-address     mds1;
-        # }
-
-        # host mds2 {
-        #     hardware ethernet 00:25:90:3a:21:48;
-        #     fixed-address     mds2;
-        # }
-
-        # host oss2 {
-        #     hardware ethernet 00:25:90:3a:21:ca;
-        #     fixed-address     oss2;
-        # }
-
-        # host oss1 {
-        #     hardware ethernet 00:25:90:3a:21:c8;
-        #     fixed-address     oss1;
-        # }
-
-        # host nfs {
-        #     hardware ethernet 00:25:90:3a:22:48;
-        #     fixed-address     nfs;
-        # }
-
         host columbus {
             hardware ethernet 00:25:90:60:60:0a;
             fixed-address     columbus;
@@ -477,6 +451,11 @@ shared-network "gaia_cluster_network" {
         host columbus-bmc {
             hardware ethernet 00:25:90:3f:ee:fe;
             fixed-address     columbus-bmc;
+        }
+
+        host encl-switch-eth-5 {
+            hardware ethernet 08:00:38:38:8d:98;
+            fixed-address     encl-switch-eth-5;
         }
 
         # ===== gaia cluster nodes (BMC interfaces) =====
