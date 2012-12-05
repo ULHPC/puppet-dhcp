@@ -410,7 +410,7 @@ shared-network "gaia_cluster_network" {
             fixed-address     gaia-62;
         }
         host gaia-63 {
-            hardware ethernet 08:00:38:ff:ff:ff;
+            hardware ethernet 08:00:38:35:fc:6e;
             fixed-address     gaia-63;
         }
 
@@ -736,7 +736,7 @@ shared-network "gaia_cluster_network" {
             fixed-address     gaia-62-bmc;
         }
         host gaia-63-bmc {
-            hardware ethernet 08:00:38:ff:ff:ff;
+            hardware ethernet 08:00:38:35:f0:e2;
             fixed-address     gaia-63-bmc;
         }
 
@@ -778,9 +778,27 @@ shared-network "gaia_cluster_network" {
             fixed-address     gaia-72-bmc;
         }
 
-    ### Bull BCS
+        ### Bull BCS
+        host gaia-73-bmc-a {
+            hardware ethernet 08:00:38:36:60:50;
+            fixed-address     gaia-73-bmc-a;
+        }
+        host gaia-73-bmc-b {
+            hardware ethernet 08:00:38:36:62:78;
+            fixed-address     gaia-73-bmc-b;
+        }
+        host gaia-73-bmc-c {
+            hardware ethernet 08:00:38:36:62:56;
+            fixed-address     gaia-73-bmc-c;
+        }
+        host gaia-73-bmc-d {
+            hardware ethernet 08:00:38:36:62:68;
+            fixed-address     gaia-73-bmc-d;
+        }
 
-    ### Dell r820
+
+
+        ### Dell r820
         host gaia-74-bmc {
             hardware ethernet e0:db:55:01:48:62;
             fixed-address     gaia-74-bmc;
