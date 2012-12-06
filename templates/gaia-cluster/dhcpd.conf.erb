@@ -427,6 +427,12 @@ shared-network "gaia_cluster_network" {
         }
 
         ### Bull BCS
+        # eth0: shared with BMC / 08:00:38:37:88:26
+        # eth1: Prod
+        host gaia-73 {
+            hardware ethernet 08:00:38:37:88:27;
+            fixed-address     gaia-73;
+        }
 
         ### Dell r820
         host gaia-74 {
@@ -774,8 +780,6 @@ shared-network "gaia_cluster_network" {
             hardware ethernet 08:00:38:36:62:68;
             fixed-address     gaia-73-bmc-d;
         }
-
-
 
         ### Dell r820
         host gaia-74-bmc {
