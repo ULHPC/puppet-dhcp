@@ -459,10 +459,11 @@ shared-network "gaia_cluster_network" {
             fixed-address     columbus-bmc;
         }
 
-        host encl-switch-eth-5 {
-            hardware ethernet 08:00:38:38:8d:98;
-            fixed-address     encl-switch-eth-5;
+        host stan-bmc {
+            hardware ethernet 00:25:90:ff:ff:ff;
+            fixed-address     stan-bmc;
         }
+
 
         # ===== gaia cluster nodes (BMC interfaces) =====
         ### Bullx Inca Enclosure # 1
