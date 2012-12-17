@@ -417,10 +417,10 @@ shared-network "gaia_cluster_network" {
         }
 
         ### Bull BCS
-        # eth0: shared with BMC / 08:00:38:37:88:26
-        # eth1: Prod
+        # eth0: Prod / 08:00:38:37:88:26
+        # eth1: Management (shared with BMC) / 08:00:38:37:88:27
         host gaia-73 {
-            hardware ethernet 08:00:38:37:88:27;
+            hardware ethernet 08:00:38:37:88:26;
             fixed-address     gaia-73;
         }
 
