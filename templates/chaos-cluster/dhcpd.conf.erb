@@ -437,68 +437,68 @@ shared-network "chaos_cluster_network" {
 
         ############## s-nodes ################
         # aka new HP SL nodes
-        host s-cluster1-01 {
-            hardware ethernet 00:13:72:3B:89:ff;
+        host s-cluster1-1 {
+            hardware ethernet 00:9c:02:ab:c8:4c;
             fixed-address s-cluster1-1;
         }
-        host s-cluster1-02 {
-            hardware ethernet 00:14:22:7C:B8:ff;
+        host s-cluster1-2 {
+            hardware ethernet 00:9c:02:ab:c7:e8;
             fixed-address s-cluster1-2;
         }
-        host s-cluster1-03 {
-            hardware ethernet 00:14:22:7C:B7:ff;
+        host s-cluster1-3 {
+            hardware ethernet 00:9c:02:ab:c8:1c;
             fixed-address s-cluster1-3;
         }
-        host s-cluster1-04 {
-            hardware ethernet 00:13:72:3B:87:ff;
+        host s-cluster1-4 {
+            hardware ethernet 00:9c:02:ab:c7:c0;
             fixed-address s-cluster1-4;
         }
-        host s-cluster1-05 {
-            hardware ethernet 00:13:72:3B:87:ff;
+        host s-cluster1-5 {
+            hardware ethernet 00:9c:02:ab:c7:d8;
             fixed-address s-cluster1-5;
         }
-        host s-cluster1-06 {
-            hardware ethernet 00:14:22:7C:B4:ff;
+        host s-cluster1-6 {
+            hardware ethernet 00:9c:02:ab:c8:44;
             fixed-address s-cluster1-6;
         }
-        host s-cluster1-07 {
-            hardware ethernet 00:14:22:7C:B4:ff;
+        host s-cluster1-7 {
+            hardware ethernet 00:9c:02:ab:c8:10;
             fixed-address s-cluster1-7;
         }
-        host s-cluster1-08 {
-            hardware ethernet 00:14:22:7C:B7:ff;
+        host s-cluster1-8 {
+            hardware ethernet 00:9c:02:ab:c8:98;
             fixed-address s-cluster1-8;
         }
-        host s-cluster1-09 {
-            hardware ethernet 00:14:22:7C:18:ff;
+        host s-cluster1-9 {
+            hardware ethernet 00:9c:02:ab:c7:f0;
             fixed-address s-cluster1-9;
         }
         host s-cluster1-10 {
-            hardware ethernet 00:14:22:7C:B7:ff;
+            hardware ethernet 00:9c:02:ab:c7:88;
             fixed-address s-cluster1-10;
         }
         host s-cluster1-11 {
-            hardware ethernet 00:13:72:3B:8A:ff;
+            hardware ethernet 00:9c:02:ab:c8:3c;
             fixed-address s-cluster1-11;
         }
         host s-cluster1-12 {
-            hardware ethernet 00:14:22:7C:13:ff;
+            hardware ethernet 00:9c:02:ab:c7:98;
             fixed-address s-cluster1-12;
         }
         host s-cluster1-13 {
-            hardware ethernet 00:14:22:7C:B5:ff;
+            hardware ethernet 00:9c:02:ab:cf:94;
             fixed-address s-cluster1-13;
         }
         host s-cluster1-14 {
-            hardware ethernet 00:13:72:3B:89:ff;
+            hardware ethernet 00:9c:02:aa:b0:70;
             fixed-address s-cluster1-14;
         }
         host s-cluster1-15 {
-            hardware ethernet 00:13:72:3B:85:ff;
+            hardware ethernet 00:9c:02:ab:cb:84;
             fixed-address s-cluster1-15;
         }
         host s-cluster1-16 {
-            hardware ethernet 00:14:22:7C:B7:ff;
+            hardware ethernet 00:9c:02:ab:cf:8c;
             fixed-address s-cluster1-16;
         }
 
@@ -519,8 +519,74 @@ shared-network "chaos_cluster_network" {
             hardware ethernet 00:25:90:9d:00:1f;
             fixed-address cartman-bmc;
         }
+        host e-cluster1-encl {
+            hardware ethernet 90:b1:1c:07:52:6f;
+            fixed-address e-cluster1-encl;
         }
-
+        host s-cluster1-1-bmc {
+            hardware ethernet 00:9c:02:ab:c8:4e;
+            fixed-address s-cluster1-1-bmc;
+        }
+        host s-cluster1-2-bmc {
+            hardware ethernet 00:9c:02:ab:c7:ea;
+            fixed-address s-cluster1-2-bmc;
+        }
+        host s-cluster1-3-bmc {
+            hardware ethernet 00:9c:02:ab:c8:1e;
+            fixed-address s-cluster1-3-bmc;
+        }
+        host s-cluster1-4-bmc {
+            hardware ethernet 00:9c:02:ab:c7:c2;
+            fixed-address s-cluster1-4-bmc;
+        }
+        host s-cluster1-5-bmc {
+            hardware ethernet 00:9c:02:ab:c7:da;
+            fixed-address s-cluster1-5-bmc;
+        }
+        host s-cluster1-6-bmc {
+            hardware ethernet 00:9c:02:ab:c8:46;
+            fixed-address s-cluster1-6-bmc;
+        }
+        host s-cluster1-7-bmc {
+            hardware ethernet 00:9c:02:ab:c8:12;
+            fixed-address s-cluster1-7-bmc;
+        }
+        host s-cluster1-8-bmc {
+            hardware ethernet 00:9c:02:ab:c8:9a;
+            fixed-address s-cluster1-8-bmc;
+        }
+        host s-cluster1-9-bmc {
+            hardware ethernet 00:9c:02:ab:c7:f2;
+            fixed-address s-cluster1-9-bmc;
+        }
+        host s-cluster1-10-bmc {
+            hardware ethernet 00:9c:02:ab:c7:8a;
+            fixed-address s-cluster1-10-bmc;
+        }
+        host s-cluster1-11-bmc {
+            hardware ethernet 00:9c:02:ab:c8:3e;
+            fixed-address s-cluster1-11-bmc;
+        }
+        host s-cluster1-12-bmc {
+            hardware ethernet 00:9c:02:ab:c7:9a;
+            fixed-address s-cluster1-12-bmc;
+        }
+        host s-cluster1-13-bmc {
+            hardware ethernet 00:9c:02:ab:cf:96;
+            fixed-address s-cluster1-13-bmc;
+        }
+        host s-cluster1-14-bmc {
+            hardware ethernet 00:9c:02:aa:b0:72;
+            fixed-address s-cluster1-14-bmc;
+        }
+        host s-cluster1-15-bmc {
+            hardware ethernet 00:9c:02:ab:cb:86;
+            fixed-address s-cluster1-15-bmc;
+        }
+        host s-cluster1-16-bmc {
+            hardware ethernet 00:9c:02:ab:cf:8e;
+            fixed-address s-cluster1-16-bmc;
+        }
     } # End group host of the 'Mgmt' network
 
 
