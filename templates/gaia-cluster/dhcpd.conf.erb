@@ -87,7 +87,7 @@ shared-network "gaia_cluster_network" {
     #  Prod network (10.226.0.0/16) - VLAN 245
     subnet 10.226.0.0 netmask 255.255.0.0 {
         option      domain-name         "gaia-cluster.uni.lux";
-        option      domain-name-servers 10.226.251.2;    # Default DNS
+        option      domain-name-servers 10.226.251.2, 10.221.251.2; # Default DNS
         option      ntp-servers         10.221.250.5, 10.226.250.5; # NTP servers
         option      subnet-mask         255.255.0.0;     # Default subnet mask
         option      broadcast-address   10.226.255.255;  # Default broadcast adress
