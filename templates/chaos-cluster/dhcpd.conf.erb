@@ -519,6 +519,26 @@ shared-network "chaos_cluster_network" {
             hardware ethernet 00:25:90:9d:00:1f;
             fixed-address cartman-bmc;
         }
+
+
+        host switch-ib1 {
+          hardware ethernet 00:08:f1:20:39:5a;
+          fixed-address switch-ib1;
+        }
+        host switch-ib2 {
+          hardware ethernet 00:08:f1:20:3d:d8;
+          fixed-address switch-ib2;
+        }
+        host switch-ib3 {
+          hardware ethernet 00:08:f1:20:49:a8;
+          fixed-address switch-ib3;
+        }
+        host switch-ib4 {
+          hardware ethernet 00:08:f1:10:9f:ea;
+          fixed-address switch-ib4;
+        }
+
+
         host e-cluster1-encl {
             hardware ethernet 90:b1:1c:07:52:6f;
             fixed-address e-cluster1-encl;
