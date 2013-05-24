@@ -119,10 +119,6 @@ shared-network "gaia_cluster_network" {
             hardware ethernet 00:25:90:60:60:0a;
             fixed-address     columbus;
         }
-        host nyx-adminfront {
-            hardware ethernet 90:b1:1c:1a:7d:20;
-            fixed-address     10.226.250.20;
-        }
 
         # ===== gaia cluster nodes =====
         ### Bullx Inca Enclosure # 1
@@ -850,6 +846,21 @@ shared-network "gaia_cluster_network" {
             fixed-address     columbus-bmc;
         }
 
+        host nyx-adminfront-bmc {
+            hardware ethernet 90:b1:1c:1a:7d:22;
+            fixed-address     adminfront-bmc.nyx-cluster.uni.lux;
+        }
+
+        host viridis-adminfront-bmc {
+            hardware ethernet 90:b1:1c:3e:dd:8b;
+            fixed-address     viridis-bmc;
+        }
+
+        host indra-bmc {
+            hardware ethernet 90:b1:1c:44:06:ea;
+            fixed-address     indra-bmc;
+        }
+
         host stan-bmc {
             hardware ethernet 00:25:90:9d:e9:61;
             fixed-address     stan-bmc;
@@ -1572,19 +1583,14 @@ shared-network "gaia_cluster_network" {
 
         # ===== Nyx cluster (IDRAC interfaces) =====
 
-        host nyx-adminfront-bmc {
-            hardware ethernet 90:b1:1c:1a:7d:22;
-            fixed-address     10.227.250.20;
-        }
-
         host nyx-1-bmc {
             hardware ethernet 90:b1:1c:1a:86:58;
-            fixed-address     10.227.2.1;
+            fixed-address     nyx-1-bmc.nyx-cluster.uni.lux;
         }
 
         host nyx-2-bmc {
             hardware ethernet 90:b1:1c:1a:99:87;
-            fixed-address     10.227.2.2;
+            fixed-address     nyx-2-bmc.nyx-cluster.uni.lux;
         }
 
 
