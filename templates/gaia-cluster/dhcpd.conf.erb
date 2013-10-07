@@ -77,7 +77,7 @@ option dhcp-max-message-size 2048;
 # Viridis arm servers, specific pxe server
 class "viridis" {
     match if binary-to-ascii (16, 8, "-", substring (hardware, 0, 4)) = "1-fc-2f-40";
-    next-server 10.226.251.11;
+    next-server 10.226.251.14;
 }
 
 shared-network "gaia_cluster_network" {
@@ -822,7 +822,6 @@ shared-network "gaia_cluster_network" {
         host viridis-148 {
             hardware ethernet fc:2f:40:f6:b6:4c;
             fixed-address     viridis-148;
-#           next-server       10.226.251.14;
         }
 
         ### Viridis system #1
