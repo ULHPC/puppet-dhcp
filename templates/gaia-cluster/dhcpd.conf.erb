@@ -78,6 +78,7 @@ option dhcp-max-message-size 2048;
 class "viridis" {
     match if binary-to-ascii (16, 8, "-", substring (hardware, 0, 4)) = "1-fc-2f-40";
     next-server 10.226.251.14;
+    option      domain-name "viridis-cluster.uni.lux";
 }
 
 shared-network "gaia_cluster_network" {
