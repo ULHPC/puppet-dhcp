@@ -868,6 +868,11 @@ shared-network "gaia_cluster_network" {
             fixed-address     stan-bmc;
         }
 
+        host bigbug-bmc {
+            hardware ethernet 74:86:7a:d9:5b:98;
+            fixed-address     bigbug-bmc;
+        }
+
         # ===== gaia cluster nodes (BMC interfaces) =====
         ### Bullx Inca Enclosure # 1
         host gaia-1-bmc {
