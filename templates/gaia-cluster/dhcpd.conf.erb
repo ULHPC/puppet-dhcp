@@ -831,11 +831,15 @@ shared-network "gaia_cluster_network" {
         host nyx-1 {
             hardware ethernet 90:b1:1c:1a:86:56;
             fixed-address     nyx-1.nyx-cluster.uni.lux;
+        #   next-server       10.226.251.23;
+            option domain-name "nyx-cluster.uni.lux";
         }
 
         host nyx-2 {
             hardware ethernet 90:b1:1c:1a:99:85;
             fixed-address     nyx-2.nyx-cluster.uni.lux;
+        #   next-server       10.226.251.23;
+            option domain-name "nyx-cluster.uni.lux";
         }
 
 
