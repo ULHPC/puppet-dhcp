@@ -428,12 +428,19 @@ shared-network "gaia_cluster_network" {
             fixed-address     gaia-73;
         }
 
-        ### Dell r820
+        ### Dell r820 (1 TB RAM)
         host gaia-74 {
             hardware ethernet 90:b1:1c:09:22:d0;
             fixed-address     gaia-74;
         }
 
+        ### Dell R720 - Visualization nodes (end 2013)
+        # hots gaia-75 {
+        #     hardware ethernet ;
+        #     fixed-address     gaia-75;
+        # }
+
+    
 
         ### Viridis system #1
         # Prod
@@ -1211,6 +1218,35 @@ shared-network "gaia_cluster_network" {
             fixed-address     gaia-73-bmc-d;
         }
 
+        ### Dell r820 (1 TB RAM)
+        host gaia-74-bmc {
+            hardware ethernet e0:db:55:01:48:62;
+            fixed-address     gaia-74-bmc;
+        }
+
+        ### Dell R720 - Visualization nodes (end 2013)
+        host gaia-75-bmc {
+            hardware ethernet f0:1f:af:e3:bb:cb;
+            fixed-address     gaia-75-bmc;
+        }
+        host gaia-76-bmc {
+            hardware ethernet f0:1f:af:e3:b7:7a;
+            fixed-address     gaia-76-bmc;
+        }
+        host gaia-77-bmc {
+            hardware ethernet f0:1f:af:e3:ba:dc;
+            fixed-address     gaia-77-bmc;
+        }
+        host gaia-78-bmc {
+            hardware ethernet f0:1f:af:e3:bb:6e;
+            fixed-address     gaia-78-bmc;
+        }
+        host gaia-79-bmc {
+            hardware ethernet f0:1f:af:e3:bb:b5;
+            fixed-address     gaia-79-bmc;
+        }
+
+
         ### Viridis system #1
         # BMCs
         host viridis-1-bmc {
@@ -1601,11 +1637,6 @@ shared-network "gaia_cluster_network" {
             fixed-address     viridis-148-bmc.viridis-cluster.uni.lux;
         }
 
-        ### Dell r820
-        host gaia-74-bmc {
-            hardware ethernet e0:db:55:01:48:62;
-            fixed-address     gaia-74-bmc;
-        }
 
         # ===== Nyx cluster (IDRAC interfaces) =====
 
