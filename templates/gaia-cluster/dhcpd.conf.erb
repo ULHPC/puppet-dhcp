@@ -121,6 +121,7 @@ shared-network "gaia_cluster_network" {
             fixed-address     columbus;
         }
 
+
         # ===== gaia cluster nodes =====
         ### Bullx Inca Enclosure # 1
         host gaia-1 {
@@ -882,11 +883,6 @@ shared-network "gaia_cluster_network" {
             fixed-address     access-bmc;
         }
 
-        host galactus-bmc {
-            hardware ethernet 00:25:90:ce:d6:d7;
-            fixed-address     galactus-bmc;
-        }
-
         host columbus-bmc {
             hardware ethernet 00:25:90:3f:ee:fe;
             fixed-address     columbus-bmc;
@@ -915,6 +911,11 @@ shared-network "gaia_cluster_network" {
         host bigbug-bmc {
             hardware ethernet 74:86:7a:d9:5b:98;
             fixed-address     bigbug-bmc;
+        }
+
+        host galactus-bmc {
+            hardware ethernet 00:25:90:ce:d6:d7;
+            fixed-address     galactus-bmc;
         }
 
         # ===== gaia cluster nodes (BMC interfaces) =====
