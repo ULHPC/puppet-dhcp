@@ -2305,6 +2305,12 @@ shared-network "gaia_cluster_network" {
             fixed-address     nyx-2-bmc.nyx-cluster.uni.lux;
         }
 
+        # ===== HP Moonshot enclosure =====
+        #
+        host moonshot-encl {
+            hardware ethernet 38:ea:a7:0f:a5:50;
+            fixed-address     moonshot-encl;
+        }
 
     } # End group host of the 'Mgmt' network
 
