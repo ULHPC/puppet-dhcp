@@ -1235,6 +1235,10 @@ shared-network "gaia_cluster_network" {
             fixed-address     galaxy-server-bmc;
         }
 
+	host delta-1-bmc {
+	    hardware ethernet 6c:92:bf:06:98:53;
+	    fixed-address     delta-1-bmc;
+	}
 
         # ===== IB switches =====
         host switch-ib-5 {
