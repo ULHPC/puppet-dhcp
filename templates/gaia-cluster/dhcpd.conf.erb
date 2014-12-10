@@ -471,6 +471,12 @@ shared-network "gaia_cluster_network" {
 #           fixed-address     gaia-82;
 #       }
 
+	### Delta-1
+        host gaia-80 {
+            hardware ethernet 6c:92:bf:09:27:04;
+            fixed-address     gaia-80;
+        }
+
         ### Bullx Inca Enclosure # 6
         host gaia-83 {
             hardware ethernet 08:00:38:36:B8:82;
@@ -1235,11 +1241,6 @@ shared-network "gaia_cluster_network" {
             fixed-address     galaxy-server-bmc;
         }
 
-	host delta-1-bmc {
-	    hardware ethernet 6c:92:bf:06:98:53;
-	    fixed-address     delta-1-bmc;
-	}
-
         # ===== IB switches =====
         host switch-ib-5 {
             hardware ethernet 00:08:f1:20:49:ce;
@@ -1608,6 +1609,12 @@ shared-network "gaia_cluster_network" {
 #           hardware ethernet f0:1f:af:e3:bb:b5;
 #           fixed-address     gaia-82-bmc;
 #       }
+
+	### Delta-1 BMC
+	host gaia-80-bmc {
+	    hardware ethernet 6c:92:bf:06:98:53;
+	    fixed-address     gaia-80-bmc;
+	}
 
         ### Bullx Inca Enclosure # 6
         host gaia-83-bmc {
