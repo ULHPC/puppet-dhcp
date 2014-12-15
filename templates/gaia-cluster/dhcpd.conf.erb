@@ -471,9 +471,9 @@ shared-network "gaia_cluster_network" {
 #           fixed-address     gaia-82;
 #       }
 
-	### Delta-1
+      	### Delta-1
         host gaia-80 {
-            hardware ethernet 6c:92:bf:09:27:04;
+            hardware ethernet 6c:92:bf:09:27:04; # 6c:92:bf:06:98:52
             fixed-address     gaia-80;
         }
 
@@ -1932,6 +1932,50 @@ shared-network "gaia_cluster_network" {
             hardware ethernet 38:ea:a7:0f:a5:50;
             fixed-address     moonshot-encl;
         }
+
+        # ===== Openstack =====
+
+        host openstack-ctrl1-bmc {
+            hardware ethernet 54:9f:35:00:43:fc;
+            fixed-address     openstack-ctrl1-bmc;
+        }
+        host openstack-ctrl2-bmc {
+            hardware ethernet 54:9f:35:00:45:e8;
+            fixed-address     openstack-ctrl2-bmc;
+        }
+
+        host openstack-comp1-bmc {
+            hardware ethernet f8:bc:12:53:c6:b0;
+            fixed-address     openstack-comp1-bmc;
+        }
+        host openstack-comp2-bmc {
+            hardware ethernet f8:bc:12:53:c6:60;
+            fixed-address     openstack-comp2-bmc;
+        }
+        host openstack-comp3-bmc {
+            hardware ethernet f8:bc:12:53:66:e4;
+            fixed-address     openstack-comp3-bmc;
+        }
+        host openstack-comp4-bmc {
+            hardware ethernet f8:bc:12:53:c6:b0;
+            fixed-address     openstack-comp4-bmc;
+        }
+
+
+        # ===== Owncloud =====
+
+        host owncloud-bmc {
+            hardware ethernet 18:fb:7b:99:2c:56;
+            fixed-address     owncloud-bmc;
+        }
+
+        # ===== Certon =====
+
+        host certon-frontend-bmc {
+            hardware ethernet b8:2a:72:fc:8a:2e;
+            fixed-address     certon-frontend-bmc;
+        }
+
 
     } # End group host of the 'Mgmt' network
 
