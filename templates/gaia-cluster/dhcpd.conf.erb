@@ -1971,11 +1971,15 @@ shared-network "gaia_cluster_network" {
 
         # ===== Certon =====
 
-        host certon-frontend-bmc {
+        host highlander-bmc {
             hardware ethernet b8:2a:72:fc:8a:2e;
-            fixed-address     certon-frontend-bmc;
+            fixed-address     highlander-bmc;
         }
 
+        host bertha-bmc {
+            hardware ethernet 0c:c4:7a:1b:48:41;
+            fixed-address     bertha-bmc;
+        }
 
     } # End group host of the 'Mgmt' network
 
