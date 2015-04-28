@@ -826,6 +826,10 @@ shared-network "gaia_cluster_network" {
         }
 
         # ===== IB switches =====
+        host switch-ib-4 {
+            hardware ethernet 00:08:f1:20:2e:92;
+            fixed-address switch-ib-4;
+        }
         host switch-ib-5 {
             hardware ethernet 00:08:f1:20:49:ce;
             fixed-address switch-ib-5;
