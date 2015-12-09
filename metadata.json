@@ -1,0 +1,51 @@
+{
+  "name": "ULHPC/dhcp",
+  "version": "0.1.5",
+  "author": "UL HPC Management Team",
+  "mail": "hpc-sysadmins@uni.lu",
+  "summary": "Configure DHCP client and server",
+  "description": "Configure DHCP client and server",
+  "license": "GPL-3.0",
+  "source": "https://github.com/ULHPC/puppet-dhcp",
+  "docs_project": "ulhpc-puppet-dhcp",
+  "project_page": "https://github.com/ULHPC/puppet-dhcp",
+  "issues_url": "https://github.com/ULHPC/puppet-dhcp/issues",
+  "forge_url": "https://forge.puppetlabs.com/ULHPC/dhcp",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">=4.2.2 <5.0.0"
+    },
+    {
+      "name": "ULHPC/syslog",
+      "version_requirement": ">=0.1.2"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    }
+  ],
+  "tags": [
+    "dhcp"
+  ],
+  "classes": [
+    "dhcp",
+    "dhcp::client",
+    "dhcp::client::common",
+    "dhcp::client::debian",
+    "dhcp::client::redhat",
+    "dhcp::params",
+    "dhcp::server",
+    "dhcp::server::common",
+    "dhcp::server::debian",
+    "dhcp::server::redhat"
+  ],
+  "definitions": [
+
+  ]
+}
