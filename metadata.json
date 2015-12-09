@@ -15,6 +15,10 @@
     {
       "name": "puppetlabs-stdlib",
       "version_requirement": ">=4.2.2 <5.0.0"
+    },
+    {
+      "name": "ULHPC/syslog",
+      "version_requirement": ">=0.1.2"
     }
   ],
   "operatingsystem_support": [
@@ -26,5 +30,22 @@
       ]
     }
   ],
-  "tags": ["dhcp"]
+  "tags": [
+    "dhcp"
+  ],
+  "classes": [
+    "dhcp",
+    "dhcp::client",
+    "dhcp::client::common",
+    "dhcp::client::debian",
+    "dhcp::client::redhat",
+    "dhcp::params",
+    "dhcp::server",
+    "dhcp::server::common",
+    "dhcp::server::debian",
+    "dhcp::server::redhat"
+  ],
+  "definitions": [
+
+  ]
 }
