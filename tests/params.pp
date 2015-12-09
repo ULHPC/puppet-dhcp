@@ -15,7 +15,7 @@
 
 include 'dhcp::params'
 
-$names = ["ensure", "protocol", "port", "packagename"]
+$names = ['ensure', 'protocol', 'port', 'packagename']
 
 notice("dhcp::params::ensure = ${dhcp::params::ensure}")
 notice("dhcp::params::protocol = ${dhcp::params::protocol}")

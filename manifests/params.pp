@@ -30,21 +30,21 @@ class dhcp::params {
     ###########################################
 
     # ensure the presence (or absence) of dhcp
-    $ensure = $dhcp_ensure ? {
+    $ensure = $::dhcp_ensure ? {
         ''      => 'present',
-        default => "${dhcp_ensure}"
+        default => $::dhcp_ensure
     }
 
     # The Protocol used. Used by monitor and firewall class. Default is 'udp'
-    $protocol = $dhcp_protocol ? {
-        ''      => 'udp', # isn't it at the ethernet ? 
+    $protocol = $::dhcp_protocol ? {
+        ''      => 'udp', # isn't it at the ethernet ?
     }
     # The port number. Used by monitor and firewall class. The default is 67.
-    $port = $dhcp_port ? {
+    $port = $::dhcp_port ? {
         ''      => 67,
-        default => "${dhcp_port}",
+        default => $::dhcp_port,
     }
-    
+
     #### MODULE INTERNAL VARIABLES  #########
     # (Modify to adapt to unsupported OSes)
     #######################################
@@ -129,8 +129,8 @@ class dhcp::params {
         default => '/etc/sysconfig/dhcpd',
     }
 
-    
-    # 
+
+    #
     # $pkgmanager = $::operatingsystem ? {
     #     /(?i-mx:ubuntu|debian)/	       => [ '/usr/bin/apt-get' ],
     #     /(?i-mx:centos|fedora|redhat)/ => [ '/bin/rpm', '/usr/bin/up2date', '/usr/bin/yum' ],
@@ -139,4 +139,3 @@ class dhcp::params {
 
 
 }
-
