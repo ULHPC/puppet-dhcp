@@ -47,40 +47,7 @@ class dhcp::client( $ensure = $dhcp::params::ensure ) inherits dhcp::params
         debian, ubuntu:         { include dhcp::client::debian }
         redhat, fedora, centos: { include dhcp::client::redhat }
         default: {
-            fail("Module $module_name is not supported on $operatingsystem")
+            fail("Module ${::module_name} is not supported on ${::operatingsystem}")
         }
     }
 }
-
-# ------------------------------------------------------------------------------
-# = Class: dhcp::client::common
-#
-# Base class to be inherited by the other dhcp::client classes
-#
-# Note: respect the Naming standard provided here[http://projects.puppetlabs.com/projects/puppet/wiki/Module_Standards]
-class dhcp::client::common {
-
-    # Load the variables used in this module. Check the dhcp-params.pp file
-    require dhcp::params
-
-    package { "${dhcp::params::client_package}":
-        ensure  => "${dhcp::client::ensure}",
-    }
-    
-}
-
-
-# ------------------------------------------------------------------------------
-# = Class: dhcp::client::debian
-#
-# Specialization class for Debian systems
-class dhcp::client::debian inherits dhcp::client::common { }
-
-# ------------------------------------------------------------------------------
-# = Class: dhcp::client::redhat
-#
-# Specialization class for Redhat systems
-class dhcp::client::redhat inherits dhcp::client::common { }
-
-
-
