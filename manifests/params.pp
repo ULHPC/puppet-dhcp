@@ -63,6 +63,7 @@ class dhcp::params {
     $servicename = $::operatingsystem ? {
         /(?i-mx:ubuntu|debian)/  => $::lsbdistcodename ? {
             'squeeze' => 'isc-dhcp-server',
+            'wheezy'  => 'isc-dhcp-server',
             default   => 'dhcp3-server'
         },
         default                 => 'dhcpd'
