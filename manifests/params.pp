@@ -49,6 +49,7 @@ class dhcp::params {
     # (Modify to adapt to unsupported OSes)
     #######################################
     $client_package = $::operatingsystem ? {
+        /(?i-mx:centos|fedora|redhat)/ => 'dhclient',
         default => 'dhcp3-client',
     }
 
