@@ -21,6 +21,16 @@ Configure DHCP client and server.
 This module implements the following elements: 
 
 * __Puppet classes__:
+    - `dhcp` 
+    - `dhcp::client` 
+    - `dhcp::client::common` 
+    - `dhcp::client::debian` 
+    - `dhcp::client::redhat` 
+    - `dhcp::params` 
+    - `dhcp::server` 
+    - `dhcp::server::common` 
+    - `dhcp::server::debian` 
+    - `dhcp::server::redhat` 
 
 * __Puppet definitions__: 
 
@@ -35,6 +45,7 @@ See `docs/contributing.md` for more details on the steps you shall follow to hav
 See [`metadata.json`](metadata.json). In particular, this module depends on 
 
 * [puppetlabs/stdlib](https://forge.puppetlabs.com/puppetlabs/stdlib)
+* [ULHPC/syslog](https://forge.puppetlabs.com/ULHPC/syslog)
 
 ## Overview and Usage
 
@@ -51,6 +62,24 @@ Use it as follows:
 
 See also [`tests/init.pp`](tests/init.pp)
 
+### Class `dhcp::client`
+
+See [`tests/client.pp`](tests/client.pp)
+### Class `dhcp::client::debian`
+
+See [`tests/client/debian.pp`](tests/client/debian.pp)
+### Class `dhcp::client::redhat`
+
+See [`tests/client/redhat.pp`](tests/client/redhat.pp)
+### Class `dhcp::server`
+
+See [`tests/server.pp`](tests/server.pp)
+### Class `dhcp::server::debian`
+
+See [`tests/server/debian.pp`](tests/server/debian.pp)
+### Class `dhcp::server::redhat`
+
+See [`tests/server/redhat.pp`](tests/server/redhat.pp)
 
 
 ## Librarian-Puppet / R10K Setup
