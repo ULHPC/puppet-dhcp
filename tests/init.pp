@@ -16,7 +16,7 @@
 #      sudo puppet apply -t /vagrant/tests/init.pp
 #
 
-$site = "chaos-cluster"
+$site = 'chaos-cluster'
 
 node default {
     include dhcp

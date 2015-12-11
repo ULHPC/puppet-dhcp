@@ -15,7 +15,11 @@
 
 include 'dhcp::params'
 
-$names = ["ensure", "protocol", "port", "client_package", "server_package", "servicename", "processname", "hasstatus", "hasrestart", "configfile", "configfile_owner", "configfile_group", "configfile_mode", "configdir", "configdir_mode", "configdir_owner", "configdir_group", "initconfigfile"]
+$names = ['ensure', 'protocol', 'port', 'client_package', 'server_package',
+          'servicename', 'processname', 'hasstatus', 'hasrestart', 'configfile',
+          'configfile_owner', 'configfile_group', 'configfile_mode',
+          'configdir', 'configdir_mode', 'configdir_owner', 'configdir_group',
+          'initconfigfile']
 
 notice("dhcp::params::ensure = ${dhcp::params::ensure}")
 notice("dhcp::params::protocol = ${dhcp::params::protocol}")
