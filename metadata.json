@@ -1,7 +1,7 @@
 {
   "name": "ULHPC/dhcp",
   "version": "0.1.6",
-  "author": "UL HPC Management Team",
+  "author": "UL HPC DevOps Team",
   "mail": "hpc-sysadmins@uni.lu",
   "summary": "Configure DHCP client and server",
   "description": "Configure DHCP client and server",

@@ -9,7 +9,7 @@
 
 Configure DHCP client and server
 
-      Copyright (c) 2015 UL HPC Management Team <hpc-sysadmins@uni.lu>
+      Copyright (c) 2017 UL HPC DevOps Team <hpc-sysadmins@uni.lu>
       
 
 | [Project Page](https://github.com/ULHPC/puppet-dhcp) | [Sources](https://github.com/ULHPC/puppet-dhcp) | [Documentation](https://ulhpc-puppet-dhcp.readthedocs.org/en/latest/) | [Issues](https://github.com/ULHPC/puppet-dhcp/issues) |

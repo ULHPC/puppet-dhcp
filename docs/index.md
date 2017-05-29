@@ -7,7 +7,7 @@
 ![Supported Platforms](http://img.shields.io/badge/platform-debian-lightgrey.svg)
 [![Documentation Status](https://readthedocs.org/projects/ulhpc-puppet-dhcp/badge/?version=latest)](https://readthedocs.org/projects/ulhpc-puppet-dhcp/?badge=latest)
 
-      Copyright (c) 2015 UL HPC Management Team <hpc-sysadmins@uni.lu>
+      Copyright (c) 2017 UL HPC DevOps Team <hpc-sysadmins@uni.lu>
 
 | [Project Page](https://github.com/ULHPC/puppet-dhcp) | [Documentation](http://ulhpc-puppet-dhcp.readthedocs.org/en/latest/) | [Issues](https://github.com/ULHPC/puppet-dhcp/issues) |
 
