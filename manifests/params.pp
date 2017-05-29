@@ -87,7 +87,7 @@ class dhcp::params {
             /(?i-mx:squeeze|wheezy|jessie)/ => '/etc/dhcp/dhcpd.conf',
             default                         => '/etc/dhcp3/dhcpd.conf'
         },
-        default => '/etc/dhcpd.conf'
+        default => '/etc/dhcp/dhcpd.conf'
     }
     $configfile_owner = $::operatingsystem ? {
         default => 'root',
