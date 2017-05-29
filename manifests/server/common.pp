@@ -1,4 +1,4 @@
-# File::      <tt>dhcp-server.pp</tt>
+# File::      <tt>common.pp</tt>
 # Author::    Sebastien Varrette (Sebastien.Varrette@uni.lu)
 # Copyright:: Copyright (c) 2011 Sebastien Varrette
 # License::   GPLv3
@@ -38,10 +38,18 @@ class dhcp::server::common {
                     File[$dhcp::params::configdir],
                     Syslog::Conf['dhcpd']
                     ],
-        content => template("dhcp/${::site}/dhcpd.conf.erb")
-        #content => template("dhcp::server/dhcp::serverconf.erb"),
-        #notify  => Service['dhcp::server'],
-        #require => Package['dhcp::server'],
+    }
+
+    if ($dhcp::server::content != undef and $dhcp::server::source == undef) {
+        File['dhcpd.conf'] {
+            content => $dhcp::server::content
+        }
+    } elsif ($dhcp::server::content == undef and $dhcp::server::source != undef) {
+        File['dhcpd.conf'] {
+            source => $dhcp::server::source
+        }
+    } else {
+        fail("dhcp::server 'source' OR 'content' parameter must be set")
     }
 
     require syslog
@@ -50,8 +58,13 @@ class dhcp::server::common {
         source => 'puppet:///modules/dhcp/rsyslog.conf'
     }
 
+    if ($dhcp::server::ensure == 'present') {
+         $service_ensure = 'running'
+    } else {
+         $service_ensure = 'stopped'
+    }
     service { 'dhcpd':
-        ensure     => running,
+        ensure     => $service_ensure,
         name       => $dhcp::params::servicename,
         enable     => true,
         hasrestart => $dhcp::params::hasrestart,

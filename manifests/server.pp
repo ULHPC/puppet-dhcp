@@ -1,4 +1,4 @@
-# File::      <tt>dhcp-server.pp</tt>
+# File::      <tt>server.pp</tt>
 # Author::    Sebastien Varrette (Sebastien.Varrette@uni.lu)
 # Copyright:: Copyright (c) 2011 Sebastien Varrette
 # License::   GPLv3
@@ -36,7 +36,9 @@
 # [Remember: No empty lines between comments and class definition]
 #
 class dhcp::server(
-    $ensure = $dhcp::params::ensure
+    $ensure  = $dhcp::params::ensure,
+    $content = undef,
+    $source  = undef
 )
 inherits dhcp::client
 {
@@ -47,8 +49,8 @@ inherits dhcp::client
     }
 
     case $::operatingsystem {
-        debian, ubuntu:         { include dhcp::server::debian }
-        redhat, fedora, centos: { include dhcp::server::redhat }
+        debian, ubuntu:         { include dhcp::server::common::debian }
+        redhat, fedora, centos: { include dhcp::server::common::redhat }
         default: {
             fail("Module ${::module_name} is not supported on ${::operatingsystem}")
         }

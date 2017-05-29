@@ -16,8 +16,9 @@
 #      sudo puppet apply -t /vagrant/tests/init.pp
 #
 
-$site = 'chaos-cluster'
-
 node default {
-    include dhcp
+    class { 'dhcp::server':
+        ensure => absent,
+        source => 'puppet:///modules/dhcp/dhcpd.conf',
+    }
 }

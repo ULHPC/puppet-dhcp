@@ -30,50 +30,44 @@ class dhcp::params {
     ###########################################
 
     # ensure the presence (or absence) of dhcp
-    $ensure = $::dhcp_ensure ? {
-        ''      => 'present',
-        default => $::dhcp_ensure
-    }
-
+    $ensure   = 'present'
     # The Protocol used. Used by monitor and firewall class. Default is 'udp'
-    $protocol = $::dhcp_protocol ? {
-        ''      => 'udp', # isn't it at the ethernet ?
-    }
+    $protocol = 'udp'
     # The port number. Used by monitor and firewall class. The default is 67.
-    $port = $::dhcp_port ? {
-        ''      => 67,
-        default => $::dhcp_port,
-    }
+    $port     = 67
 
     #### MODULE INTERNAL VARIABLES  #########
     # (Modify to adapt to unsupported OSes)
     #######################################
     $client_package = $::operatingsystem ? {
         /(?i-mx:centos|fedora|redhat)/ => 'dhclient',
+        /(?i-mx:ubuntu|debian)/  => $::lsbdistcodename ? {
+            /(?i-mx:wheezy|jessie)/ => 'isc-dhcp-client',
+            default                 => 'dhcp3-client'
+        },
         default => 'dhcp3-client',
     }
 
     # DHCP Server configuration
     $server_package = $::operatingsystem ? {
         /(?i-mx:ubuntu|debian)/  => $::lsbdistcodename ? {
-            'squeeze' => 'isc-dhcp-server',
-            default   => 'dhcp3-server'
+            /(?i-mx:squeeze|wheezy|jessie)/ => 'isc-dhcp-server',
+            default                         => 'dhcp3-server'
         },
-        default                 => 'dhcp'
+        default => 'dhcp'
     }
     $servicename = $::operatingsystem ? {
         /(?i-mx:ubuntu|debian)/  => $::lsbdistcodename ? {
-            'squeeze' => 'isc-dhcp-server',
-            'wheezy'  => 'isc-dhcp-server',
-            default   => 'dhcp3-server'
+            /(?i-mx:squeeze|wheezy|jessie)/ => 'isc-dhcp-server',
+            default                         => 'dhcp3-server'
         },
-        default                 => 'dhcpd'
+        default => 'dhcpd'
     }
 
     # used for pattern in a service ressource
     $processname = $::operatingsystem ? {
         /(?i-mx:ubuntu|debian)/ => $::lsbdistcodename ? {
-            'squeeze' => 'dhcpd',
+            /(?i-mx:squeeze|wheezy|jessie)/ => 'dhcpd',
             default   => 'dhcpd3'
         },
         default => 'dhcpd',
@@ -90,8 +84,8 @@ class dhcp::params {
     # Configuration file
     $configfile = $::operatingsystem ? {
         /(?i-mx:ubuntu|debian)/ => $::lsbdistcodename ? {
-            'squeeze' => '/etc/dhcp/dhcpd.conf',
-            default   => '/etc/dhcp3/dhcpd.conf'
+            /(?i-mx:squeeze|wheezy|jessie)/ => '/etc/dhcp/dhcpd.conf',
+            default                         => '/etc/dhcp3/dhcpd.conf'
         },
         default => '/etc/dhcpd.conf'
     }
@@ -108,10 +102,10 @@ class dhcp::params {
     # Configuration directory
     $configdir = $::operatingsystem ? {
         /(?i-mx:ubuntu|debian)/ => $::lsbdistcodename ? {
-            'squeeze' => '/etc/dhcp',
-            default   => '/etc/dhcp3'
+            /(?i-mx:squeeze|wheezy|jessie)/ => '/etc/dhcp',
+            default                         => '/etc/dhcp3'
         },
-        default  => '/etc/dhcp'
+        default => '/etc/dhcp'
     }
     $configdir_mode = $::operatingsystem ? {
         default => '0750',
@@ -125,19 +119,10 @@ class dhcp::params {
 
     $initconfigfile = $::operatingsystem ? {
         /(?i-mx:ubuntu|debian)/ => $::lsbdistcodename ? {
-            'squeeze' => '/etc/default/isc-dhcp-server',
-            default   => '/etc/default/dhcp3-server',
+            /(?i-mx:squeeze|wheezy|jessie)/ => '/etc/default/isc-dhcp-server',
+            default                         => '/etc/default/dhcp3-server',
         },
         default => '/etc/sysconfig/dhcpd',
     }
-
-
-    #
-    # $pkgmanager = $::operatingsystem ? {
-    #     /(?i-mx:ubuntu|debian)/	       => [ '/usr/bin/apt-get' ],
-    #     /(?i-mx:centos|fedora|redhat)/ => [ '/bin/rpm', '/usr/bin/up2date', '/usr/bin/yum' ],
-    #     default => []
-    # }
-
 
 }

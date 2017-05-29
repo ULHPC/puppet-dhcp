@@ -1,4 +1,4 @@
-# File::      <tt>dhcp-client.pp</tt>
+# File::      <tt>common.pp</tt>
 # Author::    Sebastien Varrette (Sebastien.Varrette@uni.lu)
 # Copyright:: Copyright (c) 2011 Sebastien Varrette
 # License::   GPLv3
