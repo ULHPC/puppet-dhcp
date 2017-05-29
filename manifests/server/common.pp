@@ -59,9 +59,9 @@ class dhcp::server::common {
     }
 
     if ($dhcp::server::ensure == 'present') {
-         $service_ensure = 'running'
+        $service_ensure = 'running'
     } else {
-         $service_ensure = 'stopped'
+        $service_ensure = 'stopped'
     }
     service { 'dhcpd':
         ensure     => $service_ensure,
