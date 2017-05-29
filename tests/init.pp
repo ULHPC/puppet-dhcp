@@ -18,7 +18,7 @@
 
 node default {
     class { 'dhcp::server':
-        ensure => absent,
+        ensure => present,
         source => 'puppet:///modules/dhcp/dhcpd.conf',
     }
 }
