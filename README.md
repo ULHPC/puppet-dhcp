@@ -9,7 +9,7 @@
 
 Configure DHCP client and server
 
-      Copyright (c) 2017 UL HPC DevOps Team <hpc-sysadmins@uni.lu>
+      Copyright (c) 2020 UL HPC DevOps Team <hpc-sysadmins@uni.lu>
       
 
 | [Project Page](https://github.com/ULHPC/puppet-dhcp) | [Sources](https://github.com/ULHPC/puppet-dhcp) | [Documentation](https://ulhpc-puppet-dhcp.readthedocs.org/en/latest/) | [Issues](https://github.com/ULHPC/puppet-dhcp/issues) |
@@ -45,7 +45,7 @@ See `docs/contributing.md` for more details on the steps you shall follow to hav
 See [`metadata.json`](metadata.json). In particular, this module depends on 
 
 * [puppetlabs/stdlib](https://forge.puppetlabs.com/puppetlabs/stdlib)
-* [ULHPC/syslog](https://forge.puppetlabs.com/ULHPC/syslog)
+* [saz/rsyslog](https://forge.puppetlabs.com/saz/rsyslog)
 
 ## Overview and Usage
 
