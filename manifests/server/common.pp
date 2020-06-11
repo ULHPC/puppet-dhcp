@@ -36,7 +36,7 @@ class dhcp::server::common {
         require => [
                     Package['dhcpd'],
                     File[$dhcp::params::configdir],
-                    Syslog::Conf['dhcpd']
+                    Rsyslog::Snippet['dhcpd']
                     ],
     }
 
@@ -52,10 +52,11 @@ class dhcp::server::common {
         fail("dhcp::server 'source' OR 'content' parameter must be set")
     }
 
-    require syslog
-    syslog::conf { 'dhcpd':
-        ensure => $dhcp::server::ensure,
-        source => 'puppet:///modules/dhcp/rsyslog.conf'
+    if ! defined(Class['rsyslog::client']) {
+        class { 'rsyslog::client': }
+    }
+    rsyslog::snippet { 'dhcpd':
+        content => "if \$syslogtag contains 'dhcpd' then /var/log/dhcpd.log\n& ~",
     }
 
     if ($dhcp::server::ensure == 'present') {

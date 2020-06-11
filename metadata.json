@@ -17,8 +17,8 @@
       "version_requirement": ">=4.2.2 <5.0.0"
     },
     {
-      "name": "ULHPC/syslog",
-      "version_requirement": ">=0.1.2"
+      "name": "saz/rsyslog",
+      "version_requirement": ">=5.0.0"
     }
   ],
   "operatingsystem_support": [
