@@ -49,8 +49,8 @@ inherits dhcp::client
     }
 
     case $::operatingsystem {
-        debian, ubuntu:         { include dhcp::server::common::debian }
-        redhat, fedora, centos: { include dhcp::server::common::redhat }
+        'debian', 'ubuntu':         { include dhcp::server::common::debian }
+        'redhat', 'fedora', 'centos': { include dhcp::server::common::redhat }
         default: {
             fail("Module ${::module_name} is not supported on ${::operatingsystem}")
         }

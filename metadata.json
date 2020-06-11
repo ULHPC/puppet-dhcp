@@ -1,6 +1,6 @@
 {
   "name": "ULHPC/dhcp",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "UL HPC DevOps Team",
   "mail": "hpc-sysadmins@uni.lu",
   "summary": "Configure DHCP client and server",
@@ -17,8 +17,8 @@
       "version_requirement": ">=4.2.2 <5.0.0"
     },
     {
-      "name": "ULHPC/syslog",
-      "version_requirement": ">=0.1.2"
+      "name": "saz/rsyslog",
+      "version_requirement": ">=5.0.0"
     }
   ],
   "operatingsystem_support": [

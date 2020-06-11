@@ -44,8 +44,8 @@ class dhcp::client( $ensure = $dhcp::params::ensure ) inherits dhcp::params
     }
 
     case $::operatingsystem {
-        debian, ubuntu:         { include dhcp::client::common::debian }
-        redhat, fedora, centos: { include dhcp::client::common::redhat }
+        'debian', 'ubuntu':         { include dhcp::client::common::debian }
+        'redhat', 'fedora', 'centos': { include dhcp::client::common::redhat }
         default: {
             fail("Module ${::module_name} is not supported on ${::operatingsystem}")
         }
