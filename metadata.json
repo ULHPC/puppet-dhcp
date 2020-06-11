@@ -28,6 +28,12 @@
         "6",
         "7"
       ]
+    },
+    {
+      "operatingsystem": "Centos",
+      "operatingsystemrelease": [
+        "7"
+      ]
     }
   ],
   "tags": [
@@ -37,13 +43,13 @@
     "dhcp",
     "dhcp::client",
     "dhcp::client::common",
-    "dhcp::client::debian",
-    "dhcp::client::redhat",
+    "dhcp::client::common::debian",
+    "dhcp::client::common::redhat",
     "dhcp::params",
     "dhcp::server",
     "dhcp::server::common",
-    "dhcp::server::debian",
-    "dhcp::server::redhat"
+    "dhcp::server::common::debian",
+    "dhcp::server::common::redhat"
   ],
   "definitions": [
 
