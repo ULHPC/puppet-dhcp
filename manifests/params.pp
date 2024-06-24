@@ -39,9 +39,9 @@ class dhcp::params {
     #### MODULE INTERNAL VARIABLES  #########
     # (Modify to adapt to unsupported OSes)
     #######################################
-    $client_package = $::operatingsystem ? {
+    $client_package = $facts['os']['name'] ? {
         /(?i-mx:centos|fedora|redhat)/ => 'dhclient',
-        /(?i-mx:ubuntu|debian)/  => $::lsbdistcodename ? {
+        /(?i-mx:ubuntu|debian)/  => $facts['os']['distro']['codename'] ? {
             /(?i-mx:wheezy|jessie)/ => 'isc-dhcp-client',
             default                 => 'dhcp3-client'
         },
@@ -49,15 +49,15 @@ class dhcp::params {
     }
 
     # DHCP Server configuration
-    $server_package = $::operatingsystem ? {
-        /(?i-mx:ubuntu|debian)/  => $::lsbdistcodename ? {
+    $server_package = $facts['os']['name'] ? {
+        /(?i-mx:ubuntu|debian)/  => $facts['os']['distro']['codename'] ? {
             /(?i-mx:squeeze|wheezy|jessie)/ => 'isc-dhcp-server',
             default                         => 'dhcp3-server'
         },
         default => 'dhcp'
     }
-    $servicename = $::operatingsystem ? {
-        /(?i-mx:ubuntu|debian)/  => $::lsbdistcodename ? {
+    $servicename = $facts['os']['name'] ? {
+        /(?i-mx:ubuntu|debian)/  => $facts['os']['distro']['codename'] ? {
             /(?i-mx:squeeze|wheezy|jessie)/ => 'isc-dhcp-server',
             default                         => 'dhcp3-server'
         },
@@ -65,60 +65,60 @@ class dhcp::params {
     }
 
     # used for pattern in a service ressource
-    $processname = $::operatingsystem ? {
-        /(?i-mx:ubuntu|debian)/ => $::lsbdistcodename ? {
+    $processname = $facts['os']['name'] ? {
+        /(?i-mx:ubuntu|debian)/ => $facts['os']['distro']['codename'] ? {
             /(?i-mx:squeeze|wheezy|jessie)/ => 'dhcpd',
             default   => 'dhcpd3'
         },
         default => 'dhcpd',
     }
-    $hasstatus = $::operatingsystem ? {
+    $hasstatus = $facts['os']['name'] ? {
         /(?i-mx:ubuntu|debian)/        => false,
         /(?i-mx:centos|fedora|redhat)/ => true,
         default => true,
     }
-    $hasrestart = $::operatingsystem ? {
+    $hasrestart = $facts['os']['name'] ? {
         default => true,
     }
 
     # Configuration file
-    $configfile = $::operatingsystem ? {
-        /(?i-mx:ubuntu|debian)/ => $::lsbdistcodename ? {
+    $configfile = $facts['os']['name'] ? {
+        /(?i-mx:ubuntu|debian)/ => $facts['os']['distro']['codename'] ? {
             /(?i-mx:squeeze|wheezy|jessie)/ => '/etc/dhcp/dhcpd.conf',
             default                         => '/etc/dhcp3/dhcpd.conf'
         },
         default => '/etc/dhcp/dhcpd.conf'
     }
-    $configfile_owner = $::operatingsystem ? {
+    $configfile_owner = $facts['os']['name'] ? {
         default => 'root',
     }
-    $configfile_group = $::operatingsystem ? {
+    $configfile_group = $facts['os']['name'] ? {
         default => 'root',
     }
-    $configfile_mode = $::operatingsystem ? {
+    $configfile_mode = $facts['os']['name'] ? {
         default => '0644',
     }
 
     # Configuration directory
-    $configdir = $::operatingsystem ? {
-        /(?i-mx:ubuntu|debian)/ => $::lsbdistcodename ? {
+    $configdir = $facts['os']['name'] ? {
+        /(?i-mx:ubuntu|debian)/ => $facts['os']['distro']['codename'] ? {
             /(?i-mx:squeeze|wheezy|jessie)/ => '/etc/dhcp',
             default                         => '/etc/dhcp3'
         },
         default => '/etc/dhcp'
     }
-    $configdir_mode = $::operatingsystem ? {
+    $configdir_mode = $facts['os']['name'] ? {
         default => '0750',
     }
-    $configdir_owner = $::operatingsystem ? {
+    $configdir_owner = $facts['os']['name'] ? {
         default => 'root',
     }
-    $configdir_group = $::operatingsystem ? {
+    $configdir_group = $facts['os']['name'] ? {
         default => 'root',
     }
 
-    $initconfigfile = $::operatingsystem ? {
-        /(?i-mx:ubuntu|debian)/ => $::lsbdistcodename ? {
+    $initconfigfile = $facts['os']['name'] ? {
+        /(?i-mx:ubuntu|debian)/ => $facts['os']['distro']['codename'] ? {
             /(?i-mx:squeeze|wheezy|jessie)/ => '/etc/default/isc-dhcp-server',
             default                         => '/etc/default/dhcp3-server',
         },
