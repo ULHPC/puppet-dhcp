@@ -43,11 +43,11 @@ class dhcp::client( $ensure = $dhcp::params::ensure ) inherits dhcp::params
         fail("dhcp::client 'ensure' parameter must be set to either 'absent' or 'present'")
     }
 
-    case $::operatingsystem {
+    case $facts['os']['name'] {
         'debian', 'ubuntu':         { include dhcp::client::common::debian }
         'redhat', 'fedora', 'centos': { include dhcp::client::common::redhat }
         default: {
-            fail("Module ${::module_name} is not supported on ${::operatingsystem}")
+            fail("Module ${facts['module_name']} is not supported on ${facts['os']['name']}")
         }
     }
 }

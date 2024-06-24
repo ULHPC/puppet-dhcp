@@ -48,11 +48,11 @@ inherits dhcp::client
         fail("dhcp::server 'ensure' parameter must be set to either 'absent' or 'present'")
     }
 
-    case $::operatingsystem {
+    case $facts['os']['name'] {
         'debian', 'ubuntu':         { include dhcp::server::common::debian }
         'redhat', 'fedora', 'centos': { include dhcp::server::common::redhat }
         default: {
-            fail("Module ${::module_name} is not supported on ${::operatingsystem}")
+            fail("Module ${facts['module_name']} is not supported on ${facts['os']['name']}")
         }
     }
 }
