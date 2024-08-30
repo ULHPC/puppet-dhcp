@@ -17,8 +17,8 @@
       "version_requirement": ">=4.2.2 <5.0.0"
     },
     {
-      "name": "saz/rsyslog",
-      "version_requirement": ">=5.0.0"
+      "name": "puppet/rsyslog",
+      "version_requirement": ">=4.0.0"
     }
   ],
   "operatingsystem_support": [
