@@ -45,7 +45,7 @@ See `docs/contributing.md` for more details on the steps you shall follow to hav
 See [`metadata.json`](metadata.json). In particular, this module depends on 
 
 * [puppetlabs/stdlib](https://forge.puppetlabs.com/puppetlabs/stdlib)
-* [saz/rsyslog](https://forge.puppetlabs.com/saz/rsyslog)
+* [puppet/rsyslog](https://forge.puppetlabs.com/puppet/rsyslog)
 
 ## Overview and Usage
 
