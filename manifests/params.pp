@@ -39,6 +39,12 @@ class dhcp::params {
     #### MODULE INTERNAL VARIABLES  #########
     # (Modify to adapt to unsupported OSes)
     #######################################
+    if ($facts['os']['family'] == 'RedHat' and Integer($facts['os']['release']['major']) <= 7) {
+        $support_rsyslog = false
+    } else {
+        $support_rsyslog = true
+    }
+
     $client_package = $facts['os']['name'] ? {
         /(?i-mx:centos|fedora|redhat)/ => 'dhclient',
         /(?i-mx:ubuntu|debian)/  => $facts['os']['distro']['codename'] ? {

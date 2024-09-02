@@ -33,11 +33,7 @@ class dhcp::server::common {
         owner   => $dhcp::params::configfile_owner,
         group   => $dhcp::params::configfile_group,
         mode    => $dhcp::params::configfile_mode,
-        require => [
-                    Package['dhcpd'],
-                    File[$dhcp::params::configdir],
-                    Rsyslog::Component::Custom_config['dhcpd']
-                    ],
+        require => [Package['dhcpd'], File[$dhcp::params::configdir]],
     }
 
     if ($dhcp::server::content != undef and $dhcp::server::source == undef) {
@@ -52,8 +48,10 @@ class dhcp::server::common {
         fail("dhcp::server 'source' OR 'content' parameter must be set")
     }
 
-    rsyslog::component::custom_config { 'dhcpd':
-        content => "if \$syslogtag contains 'dhcpd' then /var/log/dhcpd.log\n& ~"
+    if ($dhcp::params::support_rsyslog == true) {
+        rsyslog::component::custom_config { 'dhcpd':
+            content => "if \$syslogtag contains 'dhcpd' then /var/log/dhcpd.log\n& ~"
+        }
     }
 
     if ($dhcp::server::ensure == 'present') {
