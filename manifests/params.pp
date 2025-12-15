@@ -46,8 +46,8 @@ class dhcp::params {
     }
 
     $client_package = $facts['os']['name'] ? {
-        /(?i-mx:centos|fedora|redhat)/ => 'dhclient',
-        /(?i-mx:ubuntu|debian)/  => $facts['os']['distro']['codename'] ? {
+        /(?i-mx:centos|fedora|redhat|rocky)/ => 'dhclient',
+        /(?i-mx:ubuntu|debian)/              => $facts['os']['distro']['codename'] ? {
             /(?i-mx:wheezy|jessie)/ => 'isc-dhcp-client',
             default                 => 'dhcp3-client'
         },
@@ -79,8 +79,8 @@ class dhcp::params {
         default => 'dhcpd',
     }
     $hasstatus = $facts['os']['name'] ? {
-        /(?i-mx:ubuntu|debian)/        => false,
-        /(?i-mx:centos|fedora|redhat)/ => true,
+        /(?i-mx:ubuntu|debian)/              => false,
+        /(?i-mx:centos|fedora|redhat|rocky)/ => true,
         default => true,
     }
     $hasrestart = $facts['os']['name'] ? {
