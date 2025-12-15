@@ -3,7 +3,7 @@
   "version": "0.3.2",
   "author": "UL HPC DevOps Team",
   "mail": "hpc-sysadmins@uni.lu",
-  "summary": "Configure DHCP client and server",
+  "summary": "Configure ISC DHCP client and server",
   "description": "Configure DHCP client and server",
   "license": "GPL-3.0",
   "source": "https://github.com/ULHPC/puppet-dhcp",
@@ -33,6 +33,12 @@
       "operatingsystem": "Centos",
       "operatingsystemrelease": [
         "7"
+      ]
+    },
+    {
+      "operatingsystem": "Rocky",
+      "operatingsystemrelease": [
+        "9"
       ]
     }
   ],
