@@ -47,8 +47,8 @@ class dhcp::params {
 
     $client_package = $facts['os']['name'] ? {
         /(?i-mx:centos|fedora|redhat|rocky)/ => $facts['os']['release']['major'] ? {
-            7       => 'dhclient'
-            default => 'dhcp-client',
+            7       => 'dhclient',
+            default => 'dhcp-client'
         },
         /(?i-mx:ubuntu|debian)/              => $facts['os']['distro']['codename'] ? {
             /(?i-mx:wheezy|jessie)/ => 'isc-dhcp-client',
@@ -60,8 +60,8 @@ class dhcp::params {
     # DHCP Server configuration
     $server_package = $facts['os']['name'] ? {
         /(?i-mx:centos|fedora|redhat|rocky)/ => $facts['os']['release']['major'] ? {
-            7       => 'dhcp'
-            default => 'dhcp-server',
+            7       => 'dhcp',
+            default => 'dhcp-server'
         },
         /(?i-mx:ubuntu|debian)/  => $facts['os']['distro']['codename'] ? {
             /(?i-mx:squeeze|wheezy|jessie)/ => 'isc-dhcp-server',
