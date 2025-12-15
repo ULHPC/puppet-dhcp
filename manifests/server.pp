@@ -49,10 +49,10 @@ inherits dhcp::client
     }
 
     case $facts['os']['name'] {
-        'debian', 'ubuntu':         { include dhcp::server::common::debian }
-        'redhat', 'fedora', 'centos': { include dhcp::server::common::redhat }
+        'debian', 'ubuntu':                    { include dhcp::server::common::debian }
+        'redhat', 'fedora', 'centos', 'rocky': { include dhcp::server::common::redhat }
         default: {
-            fail("Module ${facts['module_name']} is not supported on ${facts['os']['name']}")
+            fail("Module ${module_name} is not supported on ${facts['os']['name']}")
         }
     }
 }

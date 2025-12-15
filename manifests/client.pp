@@ -44,10 +44,10 @@ class dhcp::client( $ensure = $dhcp::params::ensure ) inherits dhcp::params
     }
 
     case $facts['os']['name'] {
-        'debian', 'ubuntu':         { include dhcp::client::common::debian }
-        'redhat', 'fedora', 'centos': { include dhcp::client::common::redhat }
+        'debian', 'ubuntu':                    { include dhcp::client::common::debian }
+        'redhat', 'fedora', 'centos', 'rocky': { include dhcp::client::common::redhat }
         default: {
-            fail("Module ${facts['module_name']} is not supported on ${facts['os']['name']}")
+            fail("Module ${module_name} is not supported on ${facts['os']['name']}")
         }
     }
 }
