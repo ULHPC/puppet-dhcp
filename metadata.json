@@ -1,6 +1,6 @@
 {
   "name": "ULHPC-dhcp",
-  "version": "0.3.4",
+  "version": "1.0.0",
   "author": "UL HPC DevOps Team",
   "summary": "Configure ISC DHCP client and server",
   "license": "GPL-3.0",
