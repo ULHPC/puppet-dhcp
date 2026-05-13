@@ -35,19 +35,18 @@
 #
 # [Remember: No empty lines between comments and class definition]
 #
-class dhcp::client( $ensure = $dhcp::params::ensure ) inherits dhcp::params
-{
-    info ("Configuring dhcp::client (with ensure = ${ensure})")
+class dhcp::client ( $ensure = $dhcp::params::ensure ) inherits dhcp::params {
+  info ("Configuring dhcp::client (with ensure = ${ensure})")
 
-    if ! ($ensure in [ 'present', 'absent' ]) {
-        fail("dhcp::client 'ensure' parameter must be set to either 'absent' or 'present'")
-    }
+  if ! ($ensure in ['present', 'absent']) {
+    fail("dhcp::client 'ensure' parameter must be set to either 'absent' or 'present'")
+  }
 
-    case $facts['os']['name'] {
-        'debian', 'ubuntu':                    { include dhcp::client::common::debian }
-        'redhat', 'fedora', 'centos', 'rocky': { include dhcp::client::common::redhat }
-        default: {
-            fail("Module ${module_name} is not supported on ${facts['os']['name']}")
-        }
+  case $facts['os']['name'] {
+    'debian', 'ubuntu':                    { include dhcp::client::common::debian }
+    'redhat', 'fedora', 'centos', 'rocky': { include dhcp::client::common::redhat }
+    default: {
+      fail("Module ${module_name} is not supported on ${facts['os']['name']}")
     }
+  }
 }

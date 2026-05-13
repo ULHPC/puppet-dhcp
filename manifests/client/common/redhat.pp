@@ -7,4 +7,4 @@
 # = Class: dhcp::client::common::redhat
 #
 # Specialization class for Redhat systems
-class dhcp::client::common::redhat inherits dhcp::client::common { }
+class dhcp::client::common::redhat inherits dhcp::client::common {}

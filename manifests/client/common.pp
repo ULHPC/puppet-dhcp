@@ -10,12 +10,10 @@
 #
 # Note: respect the Naming standard provided here[http://projects.puppetlabs.com/projects/puppet/wiki/Module_Standards]
 class dhcp::client::common {
+  # Load the variables used in this module. Check the dhcp-params.pp file
+  require dhcp::params
 
-    # Load the variables used in this module. Check the dhcp-params.pp file
-    require dhcp::params
-
-    package { $dhcp::params::client_package:
-        ensure  => $dhcp::client::ensure,
-    }
-
+  package { $dhcp::params::client_package:
+    ensure => $dhcp::client::ensure,
+  }
 }

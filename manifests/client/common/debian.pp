@@ -7,4 +7,4 @@
 # = Class: dhcp::client::common::debian
 #
 # Specialization class for Debian systems
-class dhcp::client::common::debian inherits dhcp::client::common { }
+class dhcp::client::common::debian inherits dhcp::client::common {}
