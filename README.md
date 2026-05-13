@@ -1,5 +1,3 @@
--*- mode: markdown; mode: visual-line;  -*-
-
 # Dhcp Puppet Module
 
 [![Puppet Forge](http://img.shields.io/puppetforge/v/ULHPC/dhcp.svg)](https://forge.puppetlabs.com/ULHPC/dhcp)
@@ -8,7 +6,7 @@
 
 Configure DHCP client and server
 
-      Copyright (c) 2020 UL HPC DevOps Team <hpc-sysadmins@uni.lu>
+      Copyright (c) 2026 UL HPC Team <hpc-sysadmins@uni.lu>
 
 
 | [Project Page](https://github.com/ULHPC/puppet-dhcp) | [Sources](https://github.com/ULHPC/puppet-dhcp) | [Issues](https://github.com/ULHPC/puppet-dhcp/issues) |
@@ -36,9 +34,6 @@ This module implements the following elements:
 All these components are configured through a set of variables you will find in
 [`manifests/params.pp`](manifests/params.pp).
 
-_Note_: the various operations that can be conducted from this repository are piloted from a [`Rakefile`](https://github.com/ruby/rake) and assumes you have a running [Ruby](https://www.ruby-lang.org/en/) installation.
-See `docs/contributing.md` for more details on the steps you shall follow to have this `Rakefile` working properly.
-
 ## Dependencies
 
 See [`metadata.json`](metadata.json). In particular, this module depends on
@@ -51,35 +46,10 @@ See [`metadata.json`](metadata.json). In particular, this module depends on
 ### Class `dhcp`
 
 This is the main class defined in this module.
-It accepts the following parameters:
-
-* `$ensure`: default to 'present', can be 'absent'
 
 Use it as follows:
 
-     include ' dhcp'
-
-See also [`tests/init.pp`](tests/init.pp)
-
-### Class `dhcp::client`
-
-See [`tests/client.pp`](tests/client.pp)
-### Class `dhcp::client::debian`
-
-See [`tests/client/debian.pp`](tests/client/debian.pp)
-### Class `dhcp::client::redhat`
-
-See [`tests/client/redhat.pp`](tests/client/redhat.pp)
-### Class `dhcp::server`
-
-See [`tests/server.pp`](tests/server.pp)
-### Class `dhcp::server::debian`
-
-See [`tests/server/debian.pp`](tests/server/debian.pp)
-### Class `dhcp::server::redhat`
-
-See [`tests/server/redhat.pp`](tests/server/redhat.pp)
-
+     include 'dhcp'
 
 ## Librarian-Puppet / R10K Setup
 
@@ -93,25 +63,15 @@ or, if you prefer to work on the git version:
 
      mod "ULHPC/dhcp",
          :git => 'https://github.com/ULHPC/puppet-dhcp',
-         :ref => 'production'
+         :ref => 'main'
 
-## Issues / Feature request
+## Developments / Issues / Contributing to the code
 
-You can submit bug / issues / feature request using the [ULHPC/dhcp Puppet Module Tracker](https://github.com/ULHPC/puppet-dhcp/issues).
+This Puppet Module has been implemented in the context of the [UL HPC](http://hpc.uni.lu) Platform of the [University of Luxembourg](http://www.uni.lu).
+It relies on [Vox Pupuli modulesync](https://github.com/voxpupuli/modulesync) for its organization.
 
-## Developments / Contributing to the code
-
-If you want to contribute to the code, you shall be aware of the way this module is organized.
-These elements are detailed on [`docs/contributing.md`](contributing/index.md).
-
+You can submit bugs / issues / feature requests using the [ULHPC/dhcp Puppet Module Tracker](https://github.com/ULHPC/puppet-dhcp/issues).
 You are more than welcome to contribute to its development by [sending a pull request](https://help.github.com/articles/using-pull-requests).
-
-## Puppet modules tests within a Vagrant box
-
-The best way to test this module in a non-intrusive way is to rely on [Vagrant](http://www.vagrantup.com/).
-The `Vagrantfile` at the root of the repository pilot the provisioning various vagrant boxes available on [Vagrant cloud](https://atlas.hashicorp.com/boxes/search?utf8=%E2%9C%93&sort=&provider=virtualbox&q=svarrette) you can use to test this module.
-
-See [`docs/vagrant.md`](vagrant.md) for more details.
 
 ## Licence
 
