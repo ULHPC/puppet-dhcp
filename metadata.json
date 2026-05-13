@@ -2,19 +2,15 @@
   "name": "ULHPC-dhcp",
   "version": "0.3.4",
   "author": "UL HPC DevOps Team",
-  "mail": "hpc-sysadmins@uni.lu",
   "summary": "Configure ISC DHCP client and server",
-  "description": "Configure DHCP client and server",
   "license": "GPL-3.0",
   "source": "https://github.com/ULHPC/puppet-dhcp",
-  "docs_project": "ulhpc-puppet-dhcp",
   "project_page": "https://github.com/ULHPC/puppet-dhcp",
   "issues_url": "https://github.com/ULHPC/puppet-dhcp/issues",
-  "forge_url": "https://forge.puppetlabs.com/ULHPC/dhcp",
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
-      "version_requirement": ">=4.2.2 <5.0.0"
+      "version_requirement": ">=4.2.2 <10.0.0"
     },
     {
       "name": "puppet/rsyslog",
@@ -30,32 +26,34 @@
       ]
     },
     {
-      "operatingsystem": "Centos",
+      "operatingsystem": "RedHat",
       "operatingsystemrelease": [
-        "7"
+        "7",
+        "8",
+        "9"
       ]
     },
     {
       "operatingsystem": "Rocky",
       "operatingsystemrelease": [
+        "8",
         "9"
       ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 8.0.0 < 9.0.0"
     }
   ],
   "tags": [
     "dhcp"
-  ],
-  "classes": [
-    "dhcp",
-    "dhcp::client",
-    "dhcp::client::common",
-    "dhcp::client::common::debian",
-    "dhcp::client::common::redhat",
-    "dhcp::params",
-    "dhcp::server",
-    "dhcp::server::common",
-    "dhcp::server::common::debian",
-    "dhcp::server::common::redhat"
-  ],
-  "definitions": []
+  ]
 }
